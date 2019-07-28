@@ -1,0 +1,85 @@
+{
+  "galleries": [
+    {
+      "name": "fashion",
+      "relations": ["glamour", "portrait"],
+      "images": [
+        {
+          "filename": "",
+          "title": "",
+          "size": 123,
+          "exif": {},
+          "datetime": ""
+        },
+        {
+          "filename": "",
+          "title": "",
+          "size": 123,
+          "exif": {},
+          "datetime": ""
+        },
+        {
+          "filename": "",
+          "title": "",
+          "size": 123,
+          "exif": {},
+          "datetime": ""
+        }
+      ]
+    },
+    {
+      "name": "street",
+      "relations": ["portrait"],
+      "images": [
+        {
+          "filename": "",
+          "title": "",
+          "size": 123,
+          "exif": {},
+          "datetime": ""
+        },
+        {
+          "filename": "",
+          "title": "",
+          "size": 123,
+          "exif": {},
+          "datetime": ""
+        },
+        {
+          "filename": "",
+          "title": "",
+          "size": 123,
+          "exif": {},
+          "datetime": ""
+        }
+      ]
+    },
+    {
+      "name": "glamour",
+      "relations": ["fashion", "portrait"],
+      "images": [
+        {
+          "filename": "",
+          "title": "",
+          "size": 123,
+          "exif": {},
+          "datetime": ""
+        },
+        {
+          "filename": "",
+          "title": "",
+          "size": 123,
+          "exif": {},
+          "datetime": ""
+        },
+        {
+          "filename": "",
+          "title": "",
+          "size": 123,
+          "exif": {},
+          "datetime": ""
+        }
+      ]
+    }
+  ]
+}
