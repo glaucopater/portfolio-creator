@@ -1,12 +1,14 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import strings from '../../constants/strings';
+import { StyledGallery } from './styled';
+import Image from '../Image/';
+
 export default class Gallery extends PureComponent {
   static propTypes = {
     gallery: PropTypes.string.isRequired,
     published_at: PropTypes.string.isRequired,
     url: PropTypes.string.isRequired,
-    choices: PropTypes.array.isRequired,
     data: PropTypes.object,
   };
 
@@ -23,10 +25,19 @@ export default class Gallery extends PureComponent {
     console.log('TCL: Gallery -> render ->  this.props', this.props);
 
     return (
-      <li className="Gallery">
-        <p>{gallery}</p>
+      <StyledGallery>
+        <figure>
+          <Image src={url} alt={gallery} />
+          <figcaption>
+            <h3>{gallery}</h3>
+          </figcaption>
+        </figure>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+          eiusmod tempor incididunt ut labore et dolore
+        </p>
         <a href={url}>{strings.open}</a>
-      </li>
+      </StyledGallery>
     );
   }
 }

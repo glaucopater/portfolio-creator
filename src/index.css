@@ -1,48 +1,58 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
-    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
+ figure,
+ figcaption,
+ footer,
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-    monospace;
-}
+ h2,
+ h3,
+ h4,
+ h5,
+ h6 {
+   margin: 0;
+   padding: 0;
+   border: 0;
+   font-size: 100%;
+   font: inherit;
+   vertical-align: baseline;
+ }
+
+ /* Typography imported from Google Fonts */
+ @import url('https://fonts.googleapis.com/css?family=Playfair+Display|Source+Sans+Pro:200,400');
 
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  margin: 2rem;
-}
+ body {
+   margin: 0;
 
-p,
-a {
-  font-family: 'Source Sans Pro', sans-serif;
-}
+   -webkit-font-smoothing: antialiased;
+   -moz-osx-font-smoothing: grayscale;
+ }
 
-/* Generic styles */
-html {
-  scroll-behavior: smooth;
-}
+ code {
+   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+     monospace;
+ }
 
-a {
-  background-color: blue;
-  text-decoration: none;
-  color: white;
-  border-radius: .25rem;
-  text-align: center;
-  display: inline-block;
-  transition: all .3s;
-  padding: 0.5rem;
-}
 
-a:hover {
-  opacity: .6;
-}
+ p,
+ a {
+   font-family: 'Source Sans Pro', sans-serif;
+ }
+
+ /* Generic styles */
+ html {
+   scroll-behavior: smooth;
+ }
+
+ a {
+   background-color: blue;
+   text-decoration: none;
+   color: white;
+   border-radius: .25rem;
+   text-align: center;
+   display: inline-block;
+   transition: all .3s;
+   padding: 0.5rem;
+ }
+
+ a:hover {
+   opacity: .6;
+ }
