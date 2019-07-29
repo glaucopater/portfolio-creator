@@ -11,7 +11,9 @@ const images = importAll(
 
 const Image = ({ src, alt }) => {
   if (OFFLINE) {
-    const sources = images.filter(i => i.includes(src));
+    const sources = images.filter(i =>
+      i.startsWith('/static/media/' + src.toLowerCase() + '.'),
+    );
     return <img src={sources[0]} alt={alt} />;
   } else return <img src={src} alt={alt} />;
 };

@@ -35,7 +35,7 @@ export default class Gallery extends PureComponent {
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
           eiusmod tempor incididunt ut labore et dolore
         </p>
-        <a href={'/'}>{strings.open}</a>
+        <a href={`/gallery/${url}`}>{strings.open}</a>
       </StyledGallery>
     );
   }
