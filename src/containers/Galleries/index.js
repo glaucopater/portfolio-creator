@@ -29,6 +29,7 @@ class Galleries extends React.PureComponent {
 
   render() {
     const galleries = this.props.data;
+    console.log('TCL: Galleries -> render -> this.props', this.props);
 
     if (!galleries || !galleries.data) {
       return <Loading />;
