@@ -27,11 +27,6 @@ class GalleryDetails extends React.PureComponent {
 
   render() {
     const galleryDetails = this.props.data;
-    console.log(
-      'TCL: GallerieDetails -> render -> this.props.data',
-      this.props,
-    );
-
     if (!galleryDetails || !galleryDetails.data) {
       return <Loading />;
     } else {
@@ -47,7 +42,9 @@ class GalleryDetails extends React.PureComponent {
             <StyledGalleryDetailsGrid>
               {galleryDetailsData.map((q, index) => {
                 if (q.name.toLowerCase() === this.props.match.params.name) {
-                  return <GalleryDetail key={index} {...q} />;
+                  return q.images.map((im, k) => (
+                    <GalleryDetail key={k} image={im} name={q.name} />
+                  ));
                 } else return null;
               })}
             </StyledGalleryDetailsGrid>
