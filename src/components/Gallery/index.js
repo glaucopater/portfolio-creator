@@ -22,7 +22,6 @@ export default class Gallery extends PureComponent {
 
   render() {
     const { gallery, url } = this.props;
-    console.log('TCL: Gallery -> render ->  this.props', this.props);
 
     return (
       <StyledGallery>

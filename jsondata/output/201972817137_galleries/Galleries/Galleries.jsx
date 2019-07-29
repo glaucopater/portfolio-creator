@@ -1,12 +1,9 @@
-import React, { Component } from "react";
+import React, { Component } from 'react';
 
-import Images from "./Images/Images";
-import Relations from "./Relations/Relations";
+import Images from './Images/Images';
+import Relations from './Relations/Relations';
 
 export default class Galleries extends Component {
-  componentDidMount() {
-    console.log(this.props);
-  }
   render() {
     return (
       <div className="Galleries">
