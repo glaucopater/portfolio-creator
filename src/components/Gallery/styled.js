@@ -3,6 +3,7 @@ import styled from 'styled-components';
 export const StyledGallery = styled.li`
   border: 1px solid #e2e2e2;
   border-radius: 0.5rem;
+  background: #ffffff;
 
   > figure {
     max-height: 220px;
