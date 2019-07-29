@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import backgroundImage from '../../assets/images/hero.jpg';
 
 export const StyledHero = styled.section`
-  background: url(${backgroundImage}) center;
+  background: url(${backgroundImage});
   background-size: cover;
   padding: 4rem 2rem;
   /* grid styles */
