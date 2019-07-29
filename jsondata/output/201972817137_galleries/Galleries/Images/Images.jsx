@@ -1,11 +1,8 @@
-import React, { Component } from "react";
+import React, { Component } from 'react';
 
-import Exif from "./Exif/Exif";
+import Exif from './Exif/Exif';
 
 export default class Images extends Component {
-  componentDidMount() {
-    console.log(this.props);
-  }
   render() {
     return (
       <div className="Images">

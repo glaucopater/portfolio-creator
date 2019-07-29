@@ -6,7 +6,6 @@ const initState = {
 export function fetchGalleriesReducer(state = initState, action) {
   switch (action.type) {
     case actionTypes.GALLERIES_LOADED: {
-      console.log('TCL: fetchGalleriesReducer -> action', action);
       return {
         data: action.data.galleries,
       };

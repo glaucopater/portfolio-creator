@@ -1,6 +1,7 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 import PropTypes from 'prop-types';
 import Gallery from '../../components/Gallery';
+import Hero from '../../components/Hero';
 import Header from '../../components/Header';
 import EmptyResults from '../../components/EmptyResults';
 import Loading from '../../components/Loading';
@@ -41,14 +42,17 @@ class Galleries extends React.PureComponent {
       }
 
       return (
-        <StyledGalleries>
-          {galleriesData.length > 0 && <Header title={strings.galleries} />}
-          <StyledGalleriesGrid>
-            {galleriesData.map((q, index) => (
-              <Gallery key={index} {...q} />
-            ))}
-          </StyledGalleriesGrid>
-        </StyledGalleries>
+        <Fragment>
+          <Hero />
+          <StyledGalleries>
+            {galleriesData.length > 0 && <Header title={strings.galleries} />}
+            <StyledGalleriesGrid>
+              {galleriesData.map((q, index) => (
+                <Gallery key={index} {...q} />
+              ))}
+            </StyledGalleriesGrid>
+          </StyledGalleries>
+        </Fragment>
       );
     }
   }

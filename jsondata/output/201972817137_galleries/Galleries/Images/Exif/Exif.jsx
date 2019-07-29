@@ -1,9 +1,6 @@
-import React, { Component } from "react";
+import React, { Component } from 'react';
 
 export default class Exif extends Component {
-  componentDidMount() {
-    console.log(this.props);
-  }
   render() {
     return (
       <div className="Exif">
