@@ -10,7 +10,7 @@ import { StyledGalleryDetails, StyledGalleryDetailsGrid } from './styled';
 
 class GalleryDetails extends React.PureComponent {
   static propTypes = {
-    GallerieDetails: PropTypes.object,
+    galleryDetails: PropTypes.object,
     fetchGalleryDetails: PropTypes.func,
   };
 
@@ -27,6 +27,7 @@ class GalleryDetails extends React.PureComponent {
 
   render() {
     const galleryDetails = this.props.data;
+    console.log('TCL: GalleryDetails -> render -> this.props', this.props);
     if (!galleryDetails || !galleryDetails.data) {
       return <Loading />;
     } else {
@@ -43,7 +44,11 @@ class GalleryDetails extends React.PureComponent {
               {galleryDetailsData.map((q, index) => {
                 if (q.name.toLowerCase() === this.props.match.params.name) {
                   return q.images.map((im, k) => (
-                    <GalleryDetail key={k} image={im} name={q.name} />
+                    <GalleryDetail
+                      key={k}
+                      image={im}
+                      name={q.name.toLowerCase()}
+                    />
                   ));
                 } else return null;
               })}

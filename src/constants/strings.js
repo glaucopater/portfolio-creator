@@ -5,4 +5,6 @@ export default {
   details: 'Details',
   back: 'Back',
   open: 'Open',
+  prev: 'Prev',
+  next: 'Next',
 };

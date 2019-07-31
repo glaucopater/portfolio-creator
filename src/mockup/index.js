@@ -73,4 +73,36 @@ export const data = {
       images: ['portrait1', 'portrait2', 'portrait3'],
     },
   ],
+  imageDetails: [
+    {
+      name: 'street1',
+      published_at: '2015-05-27T21:22:26.670000+00:00',
+      exif: {},
+    },
+    {
+      name: 'street2',
+      published_at: '2015-05-27T21:22:26.670000+00:00',
+      exif: {},
+    },
+    {
+      name: 'street3',
+      published_at: '2015-05-27T21:22:26.670000+00:00',
+      exif: {},
+    },
+    {
+      name: 'fashion1',
+      published_at: '2015-05-27T21:22:26.670000+00:00',
+      exif: {},
+    },
+    {
+      name: 'fashion2',
+      published_at: '2015-05-27T21:22:26.670000+00:00',
+      exif: {},
+    },
+    {
+      name: 'fashion3',
+      published_at: '2015-05-27T21:22:26.670000+00:00',
+      exif: {},
+    },
+  ],
 };
