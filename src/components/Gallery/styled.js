@@ -8,8 +8,7 @@ export const StyledGallery = styled.li`
   > figure {
     max-height: 220px;
     overflow: hidden;
-    border-top-left-radius: 0.5rem;
-    border-top-right-radius: 0.5rem;
+    border-radius: 0.5rem;
     position: relative;
   }
 
@@ -21,6 +20,8 @@ export const StyledGallery = styled.li`
     position: absolute;
     bottom: 0;
     background-color: rgba(0, 0, 0, 0.7);
+    border-bottom-left-radius: 0.5rem;
+    border-bottom-right-radius: 0.5rem;
     width: 100%;
   }
 

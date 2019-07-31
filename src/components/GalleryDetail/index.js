@@ -10,7 +10,9 @@ export default class GalleryDetail extends PureComponent {
         <figure>
           <Image src={image} alt={image} />
           <figcaption>
-            <h3>{name + ' ' + image}</h3>
+            <a href={`/gallery/${name}/${image}`}>
+              <h3>{name + ' ' + image}</h3>
+            </a>
           </figcaption>
         </figure>
       </StyledGalleryDetail>
