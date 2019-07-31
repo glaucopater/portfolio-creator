@@ -6,10 +6,8 @@ export const StyledGalleryDetail = styled.li`
   background: #ffffff;
 
   > figure {
-    max-height: 220px;
     overflow: hidden;
-    border-top-left-radius: 0.5rem;
-    border-top-right-radius: 0.5rem;
+    border-radius: 0.5rem;
     position: relative;
   }
 
@@ -22,6 +20,8 @@ export const StyledGalleryDetail = styled.li`
     bottom: 0;
     background-color: rgba(0, 0, 0, 0.7);
     width: 100%;
+    border-bottom-left-radius: 0.5rem;
+    border-bottom-right-radius: 0.5rem;
   }
 
   > figure > figcaption > h3 {

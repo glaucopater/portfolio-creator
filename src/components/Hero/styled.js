@@ -31,4 +31,8 @@ export const StyledHero = styled.section`
     padding: 1rem;
     margin-top: 0.75rem;
   }
+
+  a {
+    background-color: blue;
+  }
 `;
