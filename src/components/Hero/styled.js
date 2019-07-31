@@ -1,10 +1,16 @@
 import styled from 'styled-components';
-
+import { device } from '../../constants/devices';
 import backgroundImage from '../../assets/images/hero.jpg';
 
 export const StyledHero = styled.section`
   background: url(${backgroundImage});
   background-size: cover;
+
+  @media ${device.laptop} {
+    background: url(${backgroundImage}) center 35%;
+    background-size: cover;
+  }
+
   padding: 4rem 2rem;
   /* grid styles */
   display: grid;
