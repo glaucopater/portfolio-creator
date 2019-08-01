@@ -17,7 +17,6 @@ export const StyledGallery = styled.li`
   > figure:hover {
     opacity: 1;
     transition: 0.5s ease-out;
-    cursor: pointer;
     background: #000;
   }
 
