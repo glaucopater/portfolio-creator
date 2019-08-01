@@ -1,14 +1,23 @@
 import styled from 'styled-components';
 
 export const StyledGalleryDetail = styled.li`
-  border: 1px solid #e2e2e2;
+  border: 1px solid #e2e2e250;
   border-radius: 0.5rem;
-  background: #ffffff;
+  background: #000;
 
   > figure {
     overflow: hidden;
     border-radius: 0.5rem;
     position: relative;
+    opacity: 0.8;
+    transition: 0.5s ease-in;
+  }
+
+  > figure:hover {
+    opacity: 1;
+    transition: 0.5s ease-out;
+    cursor: pointer;
+    background: #000;
   }
 
   > figure > img {
