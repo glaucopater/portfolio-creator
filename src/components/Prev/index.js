@@ -1,20 +1,17 @@
 import React from 'react';
 import strings from '../../constants/strings';
+import { NavLink } from 'react-router-dom';
 
-const Prev = props => {
-  const { gallery, currentImage } = props;
+const Prev = ({ gallery, currentImage }) => {
   const currentPos = +currentImage.replace(gallery, '');
 
   if (currentPos === 1) {
     return null;
   }
   return (
-    <a
-      href={`/gallery/${gallery}/${gallery}${currentPos - 1}`}
-      alt={currentImage}
-    >
+    <NavLink to={`/gallery/${gallery}/${gallery}${currentPos - 1}`}>
       {strings.prev}
-    </a>
+    </NavLink>
   );
 };
 

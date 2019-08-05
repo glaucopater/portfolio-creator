@@ -1,12 +1,17 @@
 import React from 'react';
 import { StyledHero } from './styled';
+import { NavLink } from 'react-router-dom';
+import strings from '../../constants/strings';
+
 const Hero = () => {
   return (
     <StyledHero>
-      <h1>Glauco Pater Portfolio</h1>
+      <h1>
+        {strings.portfolioOf} {strings.author}
+      </h1>
       <article>
-        <p>Explore my photo gallery.</p>
-        <a href="#galleries">Browse Galleries</a>
+        <p>{strings.explore}</p>
+        <NavLink to="#galleries">{strings.browse}</NavLink>
       </article>
     </StyledHero>
   );

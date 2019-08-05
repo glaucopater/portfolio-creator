@@ -2,6 +2,7 @@ import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import { StyledGallery } from './styled';
 import Image from '../Image/';
+import { NavLink } from 'react-router-dom';
 
 export default class Gallery extends PureComponent {
   static propTypes = {
@@ -18,7 +19,7 @@ export default class Gallery extends PureComponent {
           <Image src={url} alt={gallery} />
           <figcaption>
             <h3>
-              <a href={`/gallery/${url}`}>{gallery}</a>
+              <NavLink to={`/gallery/${url}`}>{gallery}</NavLink>
             </h3>
           </figcaption>
         </figure>
