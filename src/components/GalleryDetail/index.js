@@ -1,6 +1,7 @@
 import React, { PureComponent } from 'react';
 import { StyledGalleryDetail } from './styled';
 import Image from '../Image';
+import { NavLink } from 'react-router-dom';
 
 export default class GalleryDetail extends PureComponent {
   render() {
@@ -10,9 +11,9 @@ export default class GalleryDetail extends PureComponent {
         <figure>
           <Image src={image} alt={image} />
           <figcaption>
-            <a href={`/gallery/${name}/${image}`}>
+            <NavLink to={`/gallery/${name}/${image}`}>
               <h3>{name + ' ' + image}</h3>
-            </a>
+            </NavLink>
           </figcaption>
         </figure>
       </StyledGalleryDetail>

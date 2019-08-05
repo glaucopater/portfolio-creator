@@ -1,5 +1,6 @@
 export default {
-  portfolio: 'Portfolio',
+  portfolioOf: 'Portfolio of',
+  author: 'Glauco Pater',
   galleries: 'Galleries',
   publishedAt: 'Published',
   details: 'Details',
@@ -7,4 +8,6 @@ export default {
   open: 'Open',
   prev: 'Prev',
   next: 'Next',
+  browse: 'Browse the galleries',
+  explore: 'Explore my photo gallery.',
 };
