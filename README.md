@@ -1,2 +1,2 @@
 # portfolio-creator
-Portfolio Generator made with Gatsby
+A portfolio creator SPA

@@ -44,6 +44,9 @@
     "enzyme": "^3.10.0",
     "enzyme-adapter-react-16": "^1.14.0",
     "jest-cli": "^24.8.0",
-    "jest-styled-components": "^6.3.3"
+    "jest-styled-components": "^6.3.3",
+    "imagemin": "^7.0.0",
+    "imagemin-jpegtran": "^6.0.0",
+    "imagemin-mozjpeg": "^8.0.0"
   }
 }

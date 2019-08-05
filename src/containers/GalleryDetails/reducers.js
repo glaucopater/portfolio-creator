@@ -3,11 +3,11 @@ import actionTypes from './actionTypes';
 const initState = {
   data: null,
 };
-export function fetchGalleriesReducer(state = initState, action) {
+export function fetchGalleryDetailsReducer(state = initState, action) {
   switch (action.type) {
-    case actionTypes.GALLERIES_LOADED: {
+    case actionTypes.GALLERY_DETAILS_LOADED: {
       return {
-        data: action.data.galleries,
+        data: action.data.galleryDetails,
       };
     }
     default:

@@ -1,12 +1,11 @@
 import styled from 'styled-components';
 
-export const StyledGallery = styled.li`
+export const StyledGalleryDetail = styled.li`
   border: 1px solid #e2e2e250;
   border-radius: 0.5rem;
   background: #000;
 
   > figure {
-    max-height: 220px;
     overflow: hidden;
     border-radius: 0.5rem;
     position: relative;
@@ -28,9 +27,9 @@ export const StyledGallery = styled.li`
     position: absolute;
     bottom: 0;
     background-color: rgba(0, 0, 0, 0.7);
+    width: 100%;
     border-bottom-left-radius: 0.5rem;
     border-bottom-right-radius: 0.5rem;
-    width: 100%;
   }
 
   > figure > figcaption > h3 {
