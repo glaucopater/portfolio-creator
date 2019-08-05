@@ -1,21 +1,21 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { OFFLINE } from '../../constants';
-
-function importAll(r) {
-  return r.keys().map(r);
-}
-
-const images = importAll(
-  require.context('../../assets/images', false, /\.(png|jpe?g|svg)$/),
-);
+import images from '../../mockup/images';
 
 const Image = ({ src, alt }) => {
   if (OFFLINE) {
     const sources = images.filter(i =>
       i.startsWith('/static/media/' + src.toLowerCase() + '.'),
     );
-    return <img src={sources[0]} alt={alt} />;
-  } else return <img src={src} alt={alt} />;
+    src = sources[0];
+  }
+  return <img src={src} alt={alt} />;
+};
+
+Image.propTypes = {
+  src: PropTypes.string,
+  alt: PropTypes.string,
 };
 
 export default Image;
