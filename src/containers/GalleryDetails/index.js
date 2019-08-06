@@ -27,11 +27,13 @@ class GalleryDetails extends React.PureComponent {
 
   render() {
     const galleryDetails = this.props.data;
-    console.log('TCL: GalleryDetails -> render -> this.props', this.props);
+
     if (!galleryDetails || !galleryDetails.data) {
       return <Loading />;
     } else {
-      const galleryDetailsData = galleryDetails.data ? galleryDetails.data : [];
+      const galleryDetailsData = galleryDetails.data.filter(
+        g => g.name.toLowerCase() === this.props.match.params.name,
+      );
 
       if (galleryDetailsData.length === 0) {
         return <EmptyResults />;

@@ -32,12 +32,18 @@ import street from '../assets/images/street.jpg';
 import street1 from '../assets/images/street1.jpg';
 import street2 from '../assets/images/street2.jpg';
 import street3 from '../assets/images/street3.jpg';
+import street4 from '../assets/images/street4.jpg';
+import street5 from '../assets/images/street5.jpg';
+import street6 from '../assets/images/street6.jpg';
 
 const images = [
   street,
   street1,
   street2,
   street3,
+  street4,
+  street5,
+  street6,
   stilllife,
   stilllife1,
   stilllife2,

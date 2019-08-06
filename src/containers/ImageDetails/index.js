@@ -21,20 +21,56 @@ class ImageDetails extends React.PureComponent {
   }
 
   componentDidMount() {
+    window.addEventListener('keydown', this.handleKeyPress);
     if (this.props.match) {
       const { match } = this.props;
       this.update(match);
     }
   }
+  componentWillUnmount() {
+    window.removeEventListener('keydown', this.handleKeyPress);
+  }
+
+  handleKeyPress = event => {
+    this.navigateTo(event.keyCode);
+  };
+
+  navigateTo = direction => {
+    let where;
+    if (direction === 39) {
+      where = 1;
+    } else if (direction === 37) {
+      where = -1;
+    }
+    const gallery = this.props.match.params.galleryname;
+    const imageDetailsData = this.props.data.data.filter(
+      d => d.name.lastIndexOf(gallery) !== -1,
+    );
+    const selectedImageDetails = imageDetailsData.filter(
+      d => d.name === this.props.match.params.name,
+    );
+    const { name: currentImage } = selectedImageDetails[0];
+    const currentPos = +currentImage.replace(gallery, '');
+    if (where === 1 && currentPos < imageDetailsData.length) {
+      this.props.history.push(
+        `/gallery/${gallery}/${gallery}${currentPos + +where}`,
+      );
+    } else if (where < 0 && currentPos !== 1) {
+      this.props.history.push(
+        `/gallery/${gallery}/${gallery}${currentPos + +where}`,
+      );
+    }
+  };
 
   render() {
-    console.log('TCL: ImageDetails -> render -> this.props', this.props);
     const imageDetails = this.props.data;
 
     if (!imageDetails || !imageDetails.data) {
       return <Loading />;
     } else {
-      const imageDetailsData = imageDetails.data ? imageDetails.data : [];
+      const imageDetailsData = this.props.data.data.filter(
+        d => d.name.lastIndexOf(this.props.match.params.galleryname) !== -1,
+      );
 
       const selectedImageDetails = imageDetailsData.filter(
         d => d.name === this.props.match.params.name,
@@ -51,6 +87,7 @@ class ImageDetails extends React.PureComponent {
             <Prev
               gallery={this.props.match.params.galleryname}
               currentImage={name}
+              imagesCount={imageDetails.length}
             />
             <StyledImageDetails>
               <Image src={name} alt={name} />
@@ -59,6 +96,7 @@ class ImageDetails extends React.PureComponent {
             <Next
               gallery={this.props.match.params.galleryname}
               currentImage={name}
+              imagesCount={imageDetailsData.length}
             />
           </ImageDetailsWrapper>
         );
