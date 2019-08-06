@@ -17,7 +17,7 @@ const destFile = 'index.js';
   files.map(f => {
     const imageFilename = `${f.sourcePath.replace(baseSourcePath, '')}`;
     const imageName = imageFilename.replace('.jpg', '');
-    importContent.push(`import ${imageName} from '.\\${imageFilename}';`);
+    importContent.push(`import ${imageName} from './${imageFilename}';`);
     exportContent.push(`${imageName}`);
   });
 
