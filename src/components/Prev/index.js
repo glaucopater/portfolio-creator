@@ -2,7 +2,7 @@ import React from 'react';
 import strings from '../../constants/strings';
 import { NavLink } from 'react-router-dom';
 
-const Prev = ({ gallery, currentImage }) => {
+const Prev = ({ gallery, currentImage, imagesCount }) => {
   const currentPos = +currentImage.replace(gallery, '');
 
   if (currentPos === 1) {
