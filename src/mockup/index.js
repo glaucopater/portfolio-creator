@@ -40,7 +40,14 @@ export const data = {
     {
       name: 'Street',
       published_at: '2015-05-27T21:22:26.670000+00:00',
-      images: ['street1', 'street2', 'street3'],
+      images: [
+        'street1',
+        'street2',
+        'street3',
+        'street4',
+        'street5',
+        'street6',
+      ],
     },
     {
       name: 'Fashion',
@@ -86,6 +93,21 @@ export const data = {
     },
     {
       name: 'street3',
+      published_at: '2015-05-27T21:22:26.670000+00:00',
+      exif: {},
+    },
+    {
+      name: 'street4',
+      published_at: '2015-05-27T21:22:26.670000+00:00',
+      exif: {},
+    },
+    {
+      name: 'street5',
+      published_at: '2015-05-27T21:22:26.670000+00:00',
+      exif: {},
+    },
+    {
+      name: 'street6',
       published_at: '2015-05-27T21:22:26.670000+00:00',
       exif: {},
     },
