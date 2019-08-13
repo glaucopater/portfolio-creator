@@ -161,5 +161,38 @@ export const data = {
       published_at: '2015-05-27T21:22:26.670000+00:00',
       exif: {},
     },
+    {
+      name: 'glamour1',
+      description: 'Giuliana',
+      published_at: '2015-05-27T21:22:26.670000+00:00',
+      exif: {},
+    },
+    {
+      name: 'glamour2',
+      description: 'Giuliana',
+      published_at: '2015-05-27T21:22:26.670000+00:00',
+      exif: {},
+    },
+    {
+      name: 'glamour3',
+      description: 'Giuliana',
+      published_at: '2015-05-27T21:22:26.670000+00:00',
+      exif: {},
+    },
+    {
+      name: 'portrait1',
+      published_at: '2015-05-27T21:22:26.670000+00:00',
+      exif: {},
+    },
+    {
+      name: 'portrait2',
+      published_at: '2015-05-27T21:22:26.670000+00:00',
+      exif: {},
+    },
+    {
+      name: 'portrait3',
+      published_at: '2015-05-27T21:22:26.670000+00:00',
+      exif: {},
+    },
   ],
 };

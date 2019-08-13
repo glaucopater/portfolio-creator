@@ -3,14 +3,17 @@ import { StyledHero } from './styled';
 import { NavLink } from 'react-router-dom';
 import strings from '../../constants/strings';
 
-const Hero = ({ galleryName }) => {
+const Hero = ({ galleryName, imageName }) => {
   return (
     <StyledHero>
       <h1>{strings.portfolioOf}</h1>
       <article>
         <Fragment>
           <NavLink to="/">{strings.home}</NavLink>
-          {galleryName && <p>{galleryName}</p>}
+          {galleryName && !imageName && <p>{galleryName}</p>}
+          {galleryName && imageName && (
+            <NavLink to={`/gallery/${galleryName}`}>{galleryName}</NavLink>
+          )}
         </Fragment>
       </article>
     </StyledHero>

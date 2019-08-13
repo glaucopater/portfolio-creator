@@ -1,6 +1,7 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 import PropTypes from 'prop-types';
 import EmptyResults from '../../components/EmptyResults';
+import Hero from '../../components/Hero';
 import Loading from '../../components/Loading';
 import Image from '../../components/Image';
 import Prev from '../../components/Prev';
@@ -81,24 +82,28 @@ class ImageDetails extends React.PureComponent {
       }
 
       if (selectedImageDetails[0]) {
-        const { name } = selectedImageDetails[0];
+        const { name, description } = selectedImageDetails[0];
+        const galleryName = this.props.match.params.galleryname;
         return (
-          <ImageDetailsWrapper>
-            <Prev
-              gallery={this.props.match.params.galleryname}
-              currentImage={name}
-              imagesCount={imageDetails.length}
-            />
-            <StyledImageDetails>
-              <Image src={name} alt={name} />
-              <h3>{name}</h3>
-            </StyledImageDetails>
-            <Next
-              gallery={this.props.match.params.galleryname}
-              currentImage={name}
-              imagesCount={imageDetailsData.length}
-            />
-          </ImageDetailsWrapper>
+          <Fragment>
+            <Hero galleryName={galleryName} imageName={name} />
+            <ImageDetailsWrapper>
+              <Prev
+                gallery={galleryName}
+                currentImage={name}
+                imagesCount={imageDetails.length}
+              />
+              <StyledImageDetails>
+                <Image src={name} alt={name} />
+                <h3>{description}</h3>
+              </StyledImageDetails>
+              <Next
+                gallery={galleryName}
+                currentImage={name}
+                imagesCount={imageDetailsData.length}
+              />
+            </ImageDetailsWrapper>
+          </Fragment>
         );
       } else return null;
     }
