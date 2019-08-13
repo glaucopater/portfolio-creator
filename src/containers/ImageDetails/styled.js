@@ -16,6 +16,5 @@ export const StyledImageDetails = styled.div`
   align-content: center;
   justify-content: center;
   flex-direction: column;
-  border: 1px solid #fff;
   color: #fff;
 `;
