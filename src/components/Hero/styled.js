@@ -39,6 +39,7 @@ export const StyledHero = styled.section`
     padding: 1rem;
     margin-top: 0.75rem;
     margin-right: 1rem;
+    text-transform: capitalize;
   }
 
   a {

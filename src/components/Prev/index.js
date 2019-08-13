@@ -6,7 +6,7 @@ const Prev = ({ gallery, currentImage, imagesCount }) => {
   const currentPos = +currentImage.replace(gallery, '');
 
   if (currentPos === 1) {
-    return null;
+    return <div style={{ padding: '0.5rem' }}>{strings.prev}</div>;
   }
   return (
     <NavLink to={`/gallery/${gallery}/${gallery}${currentPos - 1}`}>

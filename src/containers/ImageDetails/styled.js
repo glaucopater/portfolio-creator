@@ -17,4 +17,10 @@ export const StyledImageDetails = styled.div`
   justify-content: center;
   flex-direction: column;
   color: #fff;
+  > h3 {
+    margin-top: 1rem;
+  }
+  > div {
+    padding: ${DEFAULT_PADDING};
+  }
 `;

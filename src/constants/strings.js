@@ -11,4 +11,5 @@ export default {
   next: 'Next',
   browse: 'Portfolio of Glauco Pater',
   explore: 'Portfolio of Glauco Pater',
+  empty: '',
 };
