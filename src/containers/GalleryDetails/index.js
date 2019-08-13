@@ -1,6 +1,7 @@
 import React, { Fragment } from 'react';
 import PropTypes from 'prop-types';
 import GalleryDetail from '../../components/GalleryDetail/';
+import Hero from '../../components/Hero/';
 import EmptyResults from '../../components/EmptyResults';
 import Loading from '../../components/Loading';
 import { fetchGalleryDetails } from './actions';
@@ -27,12 +28,13 @@ class GalleryDetails extends React.PureComponent {
 
   render() {
     const galleryDetails = this.props.data;
+    const galleryName = this.props.match.params.name;
 
     if (!galleryDetails || !galleryDetails.data) {
       return <Loading />;
     } else {
       const galleryDetailsData = galleryDetails.data.filter(
-        g => g.name.toLowerCase() === this.props.match.params.name,
+        g => g.name.toLowerCase() === galleryName,
       );
 
       if (galleryDetailsData.length === 0) {
@@ -41,11 +43,12 @@ class GalleryDetails extends React.PureComponent {
 
       return (
         <Fragment>
+          <Hero galleryName={galleryName} />
           <StyledGalleryDetails>
             <StyledGalleryDetailsGrid>
               {galleryDetailsData.map((q, index) => {
-                if (q.name.toLowerCase() === this.props.match.params.name) {
-                  return q.images.map((im, k) => (
+                if (q.name.toLowerCase() === galleryName) {
+                  return Object.values(q.images).map((im, k) => (
                     <GalleryDetail
                       key={k}
                       image={im}

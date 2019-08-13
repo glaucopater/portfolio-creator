@@ -2,82 +2,127 @@ export const data = {
   galleries: [
     {
       gallery: 'Street Photography',
-      published_at: '2015-05-27T21:22:26.670000+00:00',
+      published_at: '2019',
       url: 'street',
     },
     {
       gallery: 'Fashion',
-      published_at: '2015-05-27T21:22:26.670000+00:00',
+      published_at: '2019',
       url: 'fashion',
     },
     {
       gallery: 'Glamour',
-      published_at: '2015-05-27T21:22:26.670000+00:00',
+      published_at: '2019',
       url: 'glamour',
     },
     {
       gallery: 'Portrait',
-      published_at: '2015-05-27T21:22:26.670000+00:00',
+      published_at: '2019',
       url: 'portrait',
-    },
-    {
-      gallery: 'Nature',
-      published_at: '2015-05-27T21:22:26.670000+00:00',
-      url: 'nature',
-    },
-    {
-      gallery: 'Still Life',
-      published_at: '2015-05-27T21:22:26.670000+00:00',
-      url: 'stilllife',
-    },
-    {
-      gallery: 'Abstract',
-      published_at: '2015-05-27T21:22:26.670000+00:00',
-      url: 'abstract',
     },
   ],
   galleryDetails: [
     {
       name: 'Street',
-      published_at: '2015-05-27T21:22:26.670000+00:00',
+      published_at: '2019',
       images: [
-        'street1',
-        'street2',
-        'street3',
-        'street4',
-        'street5',
-        'street6',
+        {
+          name: 'street1',
+          description: 'Berlin',
+          location: 'Berlin',
+          published_at: '2019',
+        },
+        {
+          name: 'street2',
+          description: 'Berlin',
+          location: 'Berlin',
+          published_at: '2019',
+        },
+        {
+          name: 'street3',
+          description: 'Berlin',
+          location: 'Berlin',
+          published_at: '2019',
+        },
+        {
+          name: 'street4',
+          description: 'Berlin',
+          location: 'Berlin',
+          published_at: '2019',
+        },
       ],
     },
     {
       name: 'Fashion',
-      published_at: '2015-05-27T21:22:26.670000+00:00',
-      images: ['fashion1', 'fashion2', 'fashion3'],
-    },
-    {
-      name: 'Abstract',
-      published_at: '2015-05-27T21:22:26.670000+00:00',
-      images: ['abstract1', 'abstract2', 'abstract3'],
+      published_at: '2019',
+      images: [
+        {
+          name: 'fashion1',
+          description: 'Bella',
+          location: 'Berlin',
+          published_at: '2011',
+        },
+        {
+          name: 'fashion2',
+          description: 'Giuliana',
+          location: 'Berlin',
+          published_at: '2019',
+        },
+        {
+          name: 'fashion3',
+          description: 'Melody',
+          location: 'Berlin',
+          published_at: '2019',
+        },
+      ],
     },
     {
       name: 'Glamour',
-      published_at: '2015-05-27T21:22:26.670000+00:00',
-      images: ['glamour1', 'glamour2', 'glamour3'],
-    },
-    {
-      name: 'Stilllife',
-      published_at: '2015-05-27T21:22:26.670000+00:00',
-      images: ['stilllife1', 'stilllife2', 'stilllife3'],
-    },
-    {
-      name: 'Nature',
-      published_at: '2015-05-27T21:22:26.670000+00:00',
-      images: ['nature1', 'nature2', 'nature3'],
+      published_at: '2019',
+      images: [
+        {
+          name: 'glamour1',
+          description: 'Giuliana',
+          location: 'Berlin',
+          published_at: '2016',
+        },
+        {
+          name: 'glamour2',
+          description: 'Giuliana',
+          location: 'Berlin',
+          published_at: '2019',
+        },
+        {
+          name: 'glamour3',
+          location: 'Berlin',
+          description: 'Giuliana',
+          published_at: '2019',
+        },
+      ],
     },
     {
       name: 'Portrait',
-      published_at: '2015-05-27T21:22:26.670000+00:00',
-      images: ['portrait1', 'portrait2', 'portrait3'],
+      published_at: '2019',
+      images: [
+        {
+          name: 'portrait1',
+          description: 'Laura',
+          location: 'Berlin',
+          published_at: '2019',
+        },
+        {
+          name: 'portrait2',
+          description: 'Giuliana',
+          location: 'Berlin',
+          published_at: '2019',
+        },
+        {
+          name: 'portrait3',
+          description: 'Melody',
+          location: 'Berlin',
+          published_at: '2019',
+        },
+      ],
     },
   ],
   imageDetails: [
@@ -98,16 +143,6 @@ export const data = {
     },
     {
       name: 'street4',
-      published_at: '2015-05-27T21:22:26.670000+00:00',
-      exif: {},
-    },
-    {
-      name: 'street5',
-      published_at: '2015-05-27T21:22:26.670000+00:00',
-      exif: {},
-    },
-    {
-      name: 'street6',
       published_at: '2015-05-27T21:22:26.670000+00:00',
       exif: {},
     },

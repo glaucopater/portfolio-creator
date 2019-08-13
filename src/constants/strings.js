@@ -1,5 +1,6 @@
 export default {
-  portfolioOf: 'Portfolio of',
+  portfolioOf: "Glauco Pater's Photography",
+  home: 'Home',
   author: 'Glauco Pater',
   galleries: 'Galleries',
   publishedAt: 'Published',
@@ -8,6 +9,6 @@ export default {
   open: 'Open',
   prev: 'Prev',
   next: 'Next',
-  browse: 'Browse the galleries',
-  explore: 'Explore my photo gallery.',
+  browse: 'Portfolio of Glauco Pater',
+  explore: 'Portfolio of Glauco Pater',
 };

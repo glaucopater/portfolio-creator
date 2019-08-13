@@ -8,7 +8,7 @@ export const StyledGalleryDetails = styled.div`
 
 export const StyledGalleryDetailsGrid = styled.ul`
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
   @media ${device.mobileL} {
     grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
   }

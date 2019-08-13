@@ -14,7 +14,6 @@ export const StyledHero = styled.section`
   padding: 4rem 2rem;
   /* grid styles */
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
   align-items: center;
 
   > * {
@@ -25,17 +24,21 @@ export const StyledHero = styled.section`
     font-size: 4rem;
     padding-bottom: 1rem;
     text-shadow: #333 3px 3px;
+    opacity: 0.7;
   }
 
   > article > p {
     font-size: 1.5rem;
-    font-weight: 200;
     text-shadow: #333 3px 3px;
+    text-transform: capitalize;
+    display: inline-grid;
   }
 
   > article > a {
+    font-size: 1.5rem;
     padding: 1rem;
     margin-top: 0.75rem;
+    margin-right: 1rem;
   }
 
   a {
