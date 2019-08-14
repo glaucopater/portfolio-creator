@@ -60,7 +60,7 @@ export const data = {
           name: 'fashion1',
           description: 'Bella',
           location: 'Berlin',
-          published_at: '2011',
+          published_at: '2019',
         },
         {
           name: 'fashion2',

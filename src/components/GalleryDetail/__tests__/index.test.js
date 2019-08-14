@@ -1,20 +1,23 @@
 import { shallow } from 'enzyme';
 import React from 'react';
-import Question from '../index';
-import configureMockStore from 'redux-mock-store';
-const mockStore = configureMockStore();
-const store = mockStore({});
+import GalleryDetail from '../index';
 
-describe('<Question/>', () => {
+describe('<GalleryDetail/>', () => {
   it('renders correctly', () => {
     const props = {
-      question: '',
-      published_at: '',
-      url: '',
-      choices: [],
-      voteQuestion: jest.fn(),
+      image: {
+        name: 'fashion1',
+        description: 'Bella',
+        location: 'Berlin',
+        published_at: '2019',
+      },
+      name: 'gallery1',
+      description: 'a description',
+      location: 'unknown',
+      published_at: '2019',
     };
-    const wrapper = shallow(<Question {...props} />);
+
+    const wrapper = shallow(<GalleryDetail {...props} />);
     expect(wrapper).toMatchSnapshot();
   });
 });
