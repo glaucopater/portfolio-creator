@@ -1,6 +1,6 @@
 import React, { Fragment } from 'react';
 import Galleries from './containers/Galleries';
-import { BrowserRouter as Router, Route } from 'react-router-dom';
+import { HashRouter as Router, Route } from 'react-router-dom';
 import { connect } from 'react-redux';
 import GalleryDetails from './containers/GalleryDetails';
 import ImageDetails from './containers/ImageDetails';
