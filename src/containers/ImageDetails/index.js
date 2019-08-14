@@ -2,6 +2,7 @@ import React, { Fragment } from 'react';
 import PropTypes from 'prop-types';
 import EmptyResults from '../../components/EmptyResults';
 import Hero from '../../components/Hero';
+import Footer from '../../components/Footer/';
 import Loading from '../../components/Loading';
 import Image from '../../components/Image';
 import Prev from '../../components/Prev';
@@ -103,6 +104,7 @@ class ImageDetails extends React.PureComponent {
                 imagesCount={imageDetailsData.length}
               />
             </ImageDetailsWrapper>
+            <Footer />
           </Fragment>
         );
       } else return null;

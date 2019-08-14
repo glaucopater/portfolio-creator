@@ -12,4 +12,5 @@ export default {
   browse: 'Portfolio of Glauco Pater',
   explore: 'Portfolio of Glauco Pater',
   empty: '',
+  rights: '© All rights reserved',
 };
