@@ -61,6 +61,5 @@ typings/
 .next
 
 
-build
 json_data
 scripts/output*
