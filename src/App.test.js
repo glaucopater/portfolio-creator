@@ -5,15 +5,11 @@ import { Provider } from 'react-redux';
 import configureMockStore from 'redux-mock-store';
 
 const mockStore = configureMockStore();
-const store = mockStore({ questions: [] });
+const store = mockStore({ galleries: [] });
 
 it('renders without crashing', () => {
   const div = document.createElement('div');
-  const props = {
-    questions: { data: [] },
-    voteQuestion: jest.fn(),
-    fetchQuestions: jest.fn(),
-  };
+  const props = {};
   ReactDOM.render(
     <Provider store={store}>
       <App {...props} />

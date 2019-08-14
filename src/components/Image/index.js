@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { OFFLINE } from '../../constants';
+import { StyledImg } from './styled';
 import images from '../../mockup/images';
 
 const Image = ({ src, alt }) => {
@@ -10,7 +11,7 @@ const Image = ({ src, alt }) => {
     );
     src = sources[0];
   }
-  return <img src={src} alt={alt} />;
+  return <StyledImg src={src} alt={alt} />;
 };
 
 Image.propTypes = {

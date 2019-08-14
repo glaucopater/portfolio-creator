@@ -2,6 +2,7 @@ import React, { Fragment } from 'react';
 import PropTypes from 'prop-types';
 import Gallery from '../../components/Gallery';
 import Hero from '../../components/Hero';
+import Footer from '../../components/Footer';
 import EmptyResults from '../../components/EmptyResults';
 import Loading from '../../components/Loading';
 import { fetchGalleries } from './actions';
@@ -49,6 +50,7 @@ class Galleries extends React.PureComponent {
               ))}
             </StyledGalleriesGrid>
           </StyledGalleries>
+          <Footer />
         </Fragment>
       );
     }
