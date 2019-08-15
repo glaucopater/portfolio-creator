@@ -5,12 +5,9 @@ import backgroundImage from '../../assets/images/hero.jpg';
 export const StyledHero = styled.section`
   background: url(${backgroundImage});
   background-size: cover;
-  -webkit-background-size: cover;
-
   @media ${device.laptop} {
-    background: url(${backgroundImage}) center 35%;
-    background-size: cover;
-    -webkit-background-size: cover;
+    background: url(${backgroundImage});
+    background-position: center 35%;
   }
 
   padding: 4rem 2rem;
