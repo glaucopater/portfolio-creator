@@ -12,7 +12,13 @@ export const StyledHero = styled.section`
 
   @media (max-width: ${size.mobileS}) {
     background-attachment: scroll;
+    border: 1px solid red;
   }
+  border: 1px solid green;
+
+  /* Preserve aspect ratio */
+  min-width: 100%;
+  min-height: 100%;
 
   padding: 4rem 2rem;
   display: flex;
