@@ -1,2 +1,3 @@
 # portfolio-creator
-A portfolio creator SPA
+
+A portfolio creator
