@@ -6,13 +6,13 @@ export const StyledHero = styled.section`
   background: url(${backgroundImage});
   background-size: cover;
   @media ${device.laptop} {
-    background-position: center 35%;
+    background: url(${backgroundImage}) center 35%;
+    background-size: cover;
   }
   padding: 4rem 2rem;
-  display: grid;
-  grid-template-columns: auto;
-  /*grid-template-rows: 12rem auto;*/
-  align-items: center;
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
 
   > * {
     color: white;
