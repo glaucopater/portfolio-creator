@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import { device } from '../../constants/devices';
-import backgroundImage from '../../assets/images/hero.jpg';
+import backgroundImage from '../../assets/images/hero_1.jpg';
 
 export const StyledHero = styled.section`
   background: url(${backgroundImage});
