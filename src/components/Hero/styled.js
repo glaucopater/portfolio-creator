@@ -1,23 +1,17 @@
 import styled from 'styled-components';
-import { device, size } from '../../constants/devices';
+import { device } from '../../constants/devices';
 import backgroundImage from '../../assets/images/hero.jpg';
 
 export const StyledHero = styled.section`
   background: url(${backgroundImage});
+  background-size: cover;
+  -webkit-background-size: cover;
 
   @media ${device.laptop} {
     background: url(${backgroundImage}) center 35%;
+    background-size: cover;
+    -webkit-background-size: cover;
   }
-
-  @media (max-width: ${size.mobileS}) {
-    border: 1px solid red;
-  }
-  background-attachment: scroll;
-  border: 1px solid green;
-
-  /* Preserve aspect ratio */
-  min-width: 100%;
-  min-height: 100%;
 
   padding: 4rem 2rem;
   display: flex;
