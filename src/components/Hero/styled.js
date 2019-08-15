@@ -3,11 +3,8 @@ import { device } from '../../constants/devices';
 import backgroundImage from '../../assets/images/hero.jpg';
 
 export const StyledHero = styled.section`
-  background: url(${backgroundImage});
+  background: url('https://images.unsplash.com/photo-1518176258769-f227c798150e');
   background-size: cover;
-  @media ${device.laptop} {
-    background-position: center 35%;
-  }
   padding: 4rem 2rem;
   display: grid;
   grid-template-columns: auto;
