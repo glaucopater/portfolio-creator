@@ -7,7 +7,6 @@ export const StyledHero = styled.section`
   background-size: cover;
   @media ${device.laptop} {
     background: url(${backgroundImage}) center 35%;
-    background-size: cover;
   }
 
   @media (max-width: ${size.mobileS}) {
