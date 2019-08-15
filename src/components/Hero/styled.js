@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { device } from '../../constants/devices';
+import { device, size } from '../../constants/devices';
 import backgroundImage from '../../assets/images/hero.jpg';
 
 export const StyledHero = styled.section`
@@ -9,6 +9,11 @@ export const StyledHero = styled.section`
     background: url(${backgroundImage}) center 35%;
     background-size: cover;
   }
+
+  @media (max-width: ${size.mobileS}) {
+    background-attachment: scroll;
+  }
+
   padding: 4rem 2rem;
   display: flex;
   align-items: flex-start;
