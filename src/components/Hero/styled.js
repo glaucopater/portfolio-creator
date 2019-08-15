@@ -1,10 +1,13 @@
 import styled from 'styled-components';
 import { device } from '../../constants/devices';
-import backgroundImage from '../../assets/images/hero.jpg';
+import backgroundImage from '../../assets/images/hero_1.jpg';
 
 export const StyledHero = styled.section`
   background: url(${backgroundImage});
   background-size: cover;
+  @media ${device.laptop} {
+    background-position: center 35%;
+  }
   padding: 4rem 2rem;
   display: grid;
   grid-template-columns: auto;
