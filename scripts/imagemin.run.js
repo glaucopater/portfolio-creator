@@ -5,6 +5,48 @@ const baseOutputPath = 'output';
 const importsFile = 'imports.js';
 const exportsFile = 'exports.js';
 const indexFile = 'index.js';
+const jsonFile = 'data.js';
+
+function appendJson(json) {
+  if (!fs.existsSync(`${baseOutputPath}/${jsonFile}`)) {
+    const content = 'export const data = { galleries: [';
+    fs.writeFileSync(`${baseOutputPath}/${jsonFile}`, content, 'utf8', function(
+      err,
+    ) {
+      if (err) {
+        return console.warn(err);
+      }
+    });
+  }
+
+  const content = JSON.stringify(json).replace(/"/g, "'");
+  fs.appendFileSync(
+    `${baseOutputPath}/${jsonFile}`,
+    `${content},`,
+    'utf8',
+    function(err) {
+      if (err) {
+        return console.warn(err);
+      }
+    },
+  );
+}
+
+function closeJson() {
+  if (fs.existsSync(`${baseOutputPath}/${jsonFile}`)) {
+    const content = ']};';
+    fs.appendFileSync(
+      `${baseOutputPath}/${jsonFile}`,
+      content,
+      'utf8',
+      function(err) {
+        if (err) {
+          return console.warn(err);
+        }
+      },
+    );
+  }
+}
 
 //recursive helper
 function getFiles(dir, files_) {
@@ -25,15 +67,25 @@ function getFiles(dir, files_) {
 function createIndexContent(files, folderName, outputPath, baseSourcePath) {
   const importContent = [];
   const exportContent = [];
+  const images = [];
+
   files.map(f => {
     const imageFilename = `${f.sourcePath.replace(baseSourcePath, '')}`;
     const imageName = imageFilename.replace('.jpg', '').replace(/\//g, '_');
     importContent.push(
       `import ${imageName} from '.${folderName}${imageFilename}';`,
     );
+    images.push({
+      name: imageName,
+      description: '',
+      location: '',
+      published_at: '2019',
+    });
     exportContent.push(`${imageName}`);
   });
   const exportName = folderName.replace(/\//g, '_');
+
+  appendJson({ name: exportName, images: images });
   return { importContent, exportContent, exportName };
 }
 
@@ -77,6 +129,7 @@ function createIndex(files, folderName, outputPath, baseSourcePath) {
   );
 }
 
+//analyze the folder and minimize the images
 function parseFolder(baseSourcePath) {
   (async () => {
     if (baseSourcePath.substr(baseSourcePath.length) === '/') {
@@ -137,6 +190,7 @@ if (process.argv[2]) {
 //exports
 else {
   consolidateIndex();
+  closeJson();
 }
 
 //remove temporary files
