@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { OFFLINE } from '../../constants';
 import { StyledImg } from './styled';
-import images from '../../mockup/images';
+import images from '../../mockup/imagesImport';
 
 const Image = ({ src, alt }) => {
   if (OFFLINE) {

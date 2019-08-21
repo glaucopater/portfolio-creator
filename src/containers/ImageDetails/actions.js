@@ -1,7 +1,7 @@
 import actionTypes from './actionTypes.js';
 import axios from 'axios';
 import { IMAGE_DETAILS_ENDPOINT, OFFLINE } from '../../constants';
-import { data } from '../../mockup';
+import { data } from '../../mockup/data';
 
 export function fetchStaticImageDetails() {
   return dispatch => {

@@ -20,8 +20,49 @@ export const data = {
       published_at: '2019',
       url: 'portrait',
     },
+    {
+      gallery: 'malta',
+      published_at: '2019',
+      url: 'malta',
+    },
   ],
   galleryDetails: [
+    {
+      name: 'malta',
+      published_at: '2019',
+      images: [
+        {
+          name: 'malta1',
+          description: 'Malta',
+          location: 'Valletta',
+          published_at: '2019',
+        },
+        {
+          name: 'malta2',
+          description: 'Malta',
+          location: 'Valletta',
+          published_at: '2019',
+        },
+        {
+          name: 'malta3',
+          description: 'Malta',
+          location: 'Valletta',
+          published_at: '2019',
+        },
+        {
+          name: 'malta4',
+          description: 'Malta',
+          location: 'Valletta',
+          published_at: '2019',
+        },
+        {
+          name: 'malta5',
+          description: 'Malta',
+          location: 'Valletta',
+          published_at: '2019',
+        },
+      ],
+    },
     {
       name: 'Street',
       published_at: '2019',
@@ -126,6 +167,31 @@ export const data = {
     },
   ],
   imageDetails: [
+    {
+      name: 'malta1',
+      published_at: '2015-05-27T21:22:26.670000+00:00',
+      exif: {},
+    },
+    {
+      name: 'malta2',
+      published_at: '2015-05-27T21:22:26.670000+00:00',
+      exif: {},
+    },
+    {
+      name: 'malta3',
+      published_at: '2015-05-27T21:22:26.670000+00:00',
+      exif: {},
+    },
+    {
+      name: 'malta4',
+      published_at: '2015-05-27T21:22:26.670000+00:00',
+      exif: {},
+    },
+    {
+      name: 'malta5',
+      published_at: '2015-05-27T21:22:26.670000+00:00',
+      exif: {},
+    },
     {
       name: 'street1',
       published_at: '2015-05-27T21:22:26.670000+00:00',

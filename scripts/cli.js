@@ -4,8 +4,8 @@ const imageminMozjpeg = require('imagemin-mozjpeg');
 const baseOutputPath = 'output';
 const importsFile = 'imports.js';
 const exportsFile = 'exports.js';
-const indexFile = 'index.js';
-const jsonFile = 'data.js';
+const indexFile = 'imagesImport.js'; // --> should be moved to mockup folder
+const jsonFile = 'data.js'; // --> should be moved to mockup folder
 
 function appendJson(json) {
   if (!fs.existsSync(`${baseOutputPath}/${jsonFile}`)) {
@@ -56,7 +56,7 @@ function getFiles(dir, files_) {
     const name = dir + '/' + files[i];
     if (fs.statSync(name).isDirectory()) {
       getFiles(name, files_);
-      parseFolder(name + '/');
+      analyzeFolder(name + '/');
     } else {
       files_.push(name);
     }
@@ -130,7 +130,7 @@ function createIndex(files, folderName, outputPath, baseSourcePath) {
 }
 
 //analyze the folder and minimize the images
-function parseFolder(baseSourcePath) {
+function analyzeFolder(baseSourcePath) {
   (async () => {
     if (baseSourcePath.substr(baseSourcePath.length) === '/') {
       baseSourcePath = baseSourcePath.substr(-1);
@@ -138,7 +138,7 @@ function parseFolder(baseSourcePath) {
 
     const folderName = baseSourcePath.replace('../src/assets', '');
     const outputPath = baseOutputPath + folderName;
-    const files = await imagemin([`${baseSourcePath}*.{jpg}`], {
+    const files = await imagemin([`${baseSourcePath}*.{jpg|JPG}`], {
       destination: outputPath,
       plugins: [imageminMozjpeg({ quality: 70 })],
     });

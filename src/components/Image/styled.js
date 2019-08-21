@@ -3,6 +3,7 @@ import { size } from '../../constants/devices';
 import { DEFAULT_PADDING } from '../../constants/';
 
 export const StyledImg = styled.img`
+  width: 100%;
   height: auto;
   @media (max-width: ${size.laptop}) {
     width: calc(${size.tablet} - 6 * ${DEFAULT_PADDING});
