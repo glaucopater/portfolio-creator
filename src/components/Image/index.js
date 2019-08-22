@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { OFFLINE } from '../../constants';
-import { StyledImg } from './styled';
+import { StyledImg, StyledPlaceHolder } from './styled';
 import images from '../../mockup/imagesImport';
 
 const Image = ({ src, alt }) => {
@@ -11,7 +11,8 @@ const Image = ({ src, alt }) => {
     );
     src = sources[0];
   }
-  return <StyledImg src={src} alt={alt} />;
+
+  return <StyledImg src={src} alt={alt} loader={<StyledPlaceHolder />} />;
 };
 
 Image.propTypes = {

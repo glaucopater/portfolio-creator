@@ -1,11 +1,20 @@
 import styled from 'styled-components';
 import { size } from '../../constants/devices';
 import { DEFAULT_PADDING } from '../../constants/';
+import RImage from 'react-image';
 
-export const StyledImg = styled.img`
+export const StyledPlaceHolder = styled.div`
   width: 100%;
   height: auto;
-  @media (max-width: ${size.laptop}) {
+  background: grey;
+  height: 200px;
+`;
+
+export const StyledImg = styled(RImage)`
+  height: auto;
+  min-height: 200px;
+  width: 100%;
+  background: @media (max-width: ${size.laptop}) {
     width: calc(${size.tablet} - 6 * ${DEFAULT_PADDING});
   }
 

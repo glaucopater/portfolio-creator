@@ -1,12 +1,14 @@
 import React, { Fragment } from 'react';
-import { StyledHero } from './styled';
+import { StyledHero, StyledHeroHeader } from './styled';
 import { NavLink } from 'react-router-dom';
 import strings from '../../constants/strings';
 
 const Hero = ({ galleryName, imageName }) => {
   return (
     <StyledHero>
-      <h1>{strings.portfolioOf}</h1>
+      <StyledHeroHeader>
+        <h1>{strings.portfolioOf}</h1>
+      </StyledHeroHeader>
       <article>
         <Fragment>
           <NavLink to="/">{strings.home}</NavLink>
