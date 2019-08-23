@@ -47,6 +47,14 @@ export const data = {
       name: 'giuliana',
       children: [
         {
+          path: '../src/assets/images/galleries/giuliana/giuliana.jpg',
+          name: 'giuliana.jpg',
+          size: 415955,
+          extension: '.jpg',
+          type: 'file',
+          hash: '35651a7f55b5dc2c4a2b32f23f9bc8e7a313e75e',
+        },
+        {
           path: '../src/assets/images/galleries/giuliana/giuliana1.jpg',
           name: 'giuliana1.jpg',
           size: 217352,
@@ -71,7 +79,7 @@ export const data = {
           hash: 'a4523c12cb275ee922e9d9c9cd8c290522c3d1a0',
         },
       ],
-      size: 930370,
+      size: 1346325,
       type: 'directory',
     },
     {
@@ -275,6 +283,6 @@ export const data = {
       type: 'directory',
     },
   ],
-  size: 3839016,
+  size: 4254971,
   type: 'directory',
 };

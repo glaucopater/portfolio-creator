@@ -18,6 +18,7 @@ export const StyledGallery = styled.li`
     opacity: 1;
     transition: 0.5s ease-out;
     background: #000;
+    cursor: pointer;
   }
 
   > figure > img {

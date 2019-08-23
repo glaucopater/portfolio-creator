@@ -2,7 +2,7 @@ import actionTypes from './actionTypes.js';
 import axios from 'axios';
 import { transformGalleries } from '../../utils/helpers';
 import { GALLERIES_ENDPOINT, OFFLINE } from '../../constants';
-import { data } from '../../mockup/dirTree';
+import { data } from '../../mockup/data';
 
 export function fetchStaticGalleries() {
   return dispatch => {

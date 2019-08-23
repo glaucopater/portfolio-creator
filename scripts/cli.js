@@ -91,7 +91,7 @@ if (sourceFolder) {
   );
 
   //create data file
-  console.log(JSON.stringify(tree));
+  console.log('export const data = ' + JSON.stringify(tree));
 } else if (fs.existsSync(`${outputPath}`)) {
   createImagesIndex();
 }
