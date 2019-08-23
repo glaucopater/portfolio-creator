@@ -1,13 +1,14 @@
 import actionTypes from './actionTypes.js';
 import axios from 'axios';
 import { IMAGE_DETAILS_ENDPOINT, OFFLINE } from '../../constants';
-import { data } from '../../mockup/data';
+import { transformImageDetails } from '../../utils/helpers';
+import { data } from '../../mockup/dirTree';
 
 export function fetchStaticImageDetails() {
   return dispatch => {
     return dispatch({
       type: actionTypes.IMAGE_DETAILS_LOADED,
-      data: data,
+      data: transformImageDetails(data),
     });
   };
 }

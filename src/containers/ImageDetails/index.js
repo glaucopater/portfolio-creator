@@ -74,7 +74,7 @@ class ImageDetails extends React.PureComponent {
         d => d.name.lastIndexOf(this.props.match.params.galleryname) !== -1,
       );
 
-      const selectedImageDetails = imageDetailsData.filter(
+      const selectedImageDetails = imageDetailsData[0].images.filter(
         d => d.name === this.props.match.params.name,
       );
 
@@ -82,8 +82,8 @@ class ImageDetails extends React.PureComponent {
         return <EmptyResults />;
       }
 
-      if (selectedImageDetails[0]) {
-        const { name, description } = selectedImageDetails[0];
+      if (selectedImageDetails) {
+        const { name, description, hash } = selectedImageDetails[0];
         const galleryName = this.props.match.params.galleryname;
         return (
           <Fragment>
@@ -95,7 +95,7 @@ class ImageDetails extends React.PureComponent {
                 imagesCount={imageDetails.length}
               />
               <StyledImageDetails>
-                <Image src={name} alt={name} />
+                <Image src={hash} alt={name} />
                 <h3>{description}</h3>
               </StyledImageDetails>
               <Next

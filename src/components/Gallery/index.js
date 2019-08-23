@@ -11,14 +11,15 @@ export default class Gallery extends PureComponent {
   };
 
   render() {
-    const { gallery, url } = this.props;
+    const { gallery, url, cover } = this.props;
+    const coverUrl = cover ? cover.hash : url;
     const galleryUrl = `/gallery/${url}`;
     return (
       <Route
         render={({ history }) => (
           <StyledGallery onClick={() => history.push(galleryUrl)}>
             <figure>
-              <Image src={url} alt={gallery} />
+              <Image src={coverUrl} alt={gallery} />
               <figcaption>
                 <h3>
                   <NavLink to={galleryUrl}>{gallery}</NavLink>
