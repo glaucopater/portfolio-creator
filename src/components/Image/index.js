@@ -1,8 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { OFFLINE } from '../../constants';
-import { StyledImg, StyledPlaceHolder } from './styled';
+import { StyledImg } from './styled';
 import images from '../../mockup/output';
+import Loader from 'react-loader-spinner';
 
 const Image = ({ src, alt }) => {
   if (OFFLINE) {
@@ -12,7 +13,13 @@ const Image = ({ src, alt }) => {
     src = sources[0];
   }
 
-  return <StyledImg src={src} alt={alt} loader={<StyledPlaceHolder />} />;
+  return (
+    <StyledImg
+      src={src}
+      alt={alt}
+      loader={<Loader type="Puff" color="#00BFFF" height="100" width="100" />}
+    />
+  );
 };
 
 Image.propTypes = {

@@ -20,6 +20,10 @@ export const StyledGalleryDetail = styled.li`
     cursor: pointer;
   }
 
+  > figure > div {
+    text-align: center;
+  }
+
   > figure > img {
     width: 100%;
   }
