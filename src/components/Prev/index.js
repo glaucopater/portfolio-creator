@@ -3,10 +3,19 @@ import strings from '../../constants/strings';
 import { NavLink } from 'react-router-dom';
 
 const Prev = ({ gallery, currentImage, imagesCount }) => {
+  console.log(
+    'TCL: Prev ->  gallery, currentImage, imagesCount',
+    gallery,
+    currentImage,
+    imagesCount,
+  );
+
   const currentPos = +currentImage.replace(gallery, '');
 
   if (currentPos === 1) {
-    return <div style={{ padding: '0.5rem' }}>{strings.prev}</div>;
+    return (
+      <div style={{ padding: '0.5rem', color: '#FFF' }}>{strings.prev}</div>
+    );
   }
   return (
     <NavLink to={`/gallery/${gallery}/${gallery}${currentPos - 1}`}>

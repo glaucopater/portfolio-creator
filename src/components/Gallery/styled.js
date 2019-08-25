@@ -38,6 +38,8 @@ export const StyledGallery = styled.li`
     color: white;
     padding: 0.75rem;
     font-size: 1.25rem;
+    text-transform: capitalize;
+    color: blue;
   }
 
   > p {
