@@ -19,6 +19,7 @@ export const StyledImageDetails = styled.div`
   color: #fff;
   > h3 {
     margin-top: 1rem;
+    text-transform: capitalize;
   }
   > div {
     padding: ${DEFAULT_PADDING};

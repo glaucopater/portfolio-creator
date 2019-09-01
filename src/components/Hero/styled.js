@@ -1,6 +1,26 @@
 import styled from 'styled-components';
 import { device, size } from '../../constants/devices';
-import backgroundImage from '../../assets/images/hero_1.jpg';
+import backgroundImage from '../../assets/images/headers/hero_1.jpg';
+
+export const StyledHeroHeader = styled.div`
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  align-content: center;
+  justify-content: center;
+
+  > h1 {
+    @media (max-width: ${size.mobileL}) {
+      font-size: 2rem;
+    }
+    font-size: 4rem;
+    text-shadow: #333 3px 3px;
+    opacity: 0.7;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    width: 100%;
+  }
+`;
 
 export const StyledHero = styled.section`
   background: url(${backgroundImage});
@@ -19,26 +39,13 @@ export const StyledHero = styled.section`
     padding: 0.5rem;
   }
 
-  padding: 4rem 2rem;
+  padding: 2rem 2rem;
   display: flex;
   align-items: flex-start;
   flex-direction: column;
 
   > * {
     color: white;
-  }
-
-  > h1 {
-    @media (max-width: ${size.mobileL}) {
-      font-size: 2rem;
-    }
-    font-size: 4rem;
-    padding-bottom: 1rem;
-    text-shadow: #333 3px 3px;
-    opacity: 0.7;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    width: 100%;
   }
 
   > article {

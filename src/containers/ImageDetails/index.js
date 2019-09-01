@@ -38,29 +38,29 @@ class ImageDetails extends React.PureComponent {
   };
 
   navigateTo = direction => {
-    let where;
-    if (direction === 39) {
-      where = 1;
-    } else if (direction === 37) {
-      where = -1;
-    }
-    const gallery = this.props.match.params.galleryname;
-    const imageDetailsData = this.props.data.data.filter(
-      d => d.name.lastIndexOf(gallery) !== -1,
-    );
-    const selectedImageDetails = imageDetailsData.filter(
-      d => d.name === this.props.match.params.name,
-    );
-    const { name: currentImage } = selectedImageDetails[0];
-    const currentPos = +currentImage.replace(gallery, '');
-    if (where === 1 && currentPos < imageDetailsData.length) {
-      this.props.history.push(
-        `/gallery/${gallery}/${gallery}${currentPos + +where}`,
+    const LEFT_ARROW = 39;
+    const RIGHT_ARROW = 37;
+
+    if (direction === LEFT_ARROW || direction === RIGHT_ARROW) {
+      const where = direction === LEFT_ARROW ? 1 : -1;
+      const gallery = this.props.match.params.galleryname;
+      const imageDetailsData = this.props.data.data.filter(
+        d => d.name.lastIndexOf(gallery) !== -1,
       );
-    } else if (where < 0 && currentPos !== 1) {
-      this.props.history.push(
-        `/gallery/${gallery}/${gallery}${currentPos + +where}`,
+      const selectedImageDetails = imageDetailsData[0].images.filter(
+        d => d.name === this.props.match.params.name,
       );
+      const { name: currentImage } = selectedImageDetails[0];
+      const currentPos = +currentImage.replace(gallery, '');
+      if (where === 1 && currentPos < imageDetailsData[0].images.length - 1) {
+        this.props.history.push(
+          `/gallery/${gallery}/${gallery}${currentPos + +where}`,
+        );
+      } else if (where < 0 && currentPos !== 1) {
+        this.props.history.push(
+          `/gallery/${gallery}/${gallery}${currentPos + +where}`,
+        );
+      }
     }
   };
 
@@ -73,8 +73,12 @@ class ImageDetails extends React.PureComponent {
       const imageDetailsData = this.props.data.data.filter(
         d => d.name.lastIndexOf(this.props.match.params.galleryname) !== -1,
       );
+      console.log(
+        'TCL: ImageDetails -> render -> imageDetailsData',
+        imageDetailsData,
+      );
 
-      const selectedImageDetails = imageDetailsData.filter(
+      const selectedImageDetails = imageDetailsData[0].images.filter(
         d => d.name === this.props.match.params.name,
       );
 
@@ -82,8 +86,8 @@ class ImageDetails extends React.PureComponent {
         return <EmptyResults />;
       }
 
-      if (selectedImageDetails[0]) {
-        const { name, description } = selectedImageDetails[0];
+      if (selectedImageDetails) {
+        const { name, description, hash } = selectedImageDetails[0];
         const galleryName = this.props.match.params.galleryname;
         return (
           <Fragment>
@@ -95,7 +99,7 @@ class ImageDetails extends React.PureComponent {
                 imagesCount={imageDetails.length}
               />
               <StyledImageDetails>
-                <Image src={name} alt={name} />
+                <Image src={hash} alt={name} />
                 <h3>{description}</h3>
               </StyledImageDetails>
               <Next

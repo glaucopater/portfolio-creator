@@ -17,6 +17,11 @@ export const StyledGalleryDetail = styled.li`
     opacity: 1;
     transition: 0.5s ease-out;
     background: #000;
+    cursor: pointer;
+  }
+
+  > figure > div {
+    text-align: center;
   }
 
   > figure > img {
@@ -32,10 +37,10 @@ export const StyledGalleryDetail = styled.li`
     border-bottom-right-radius: 0.5rem;
   }
 
-  > figure > figcaption > h3 {
-    color: white;
+  > figure > figcaption > a > h3 {
     padding: 0.75rem;
     font-size: 1.25rem;
+    text-transform: capitalize;
   }
 
   > p {

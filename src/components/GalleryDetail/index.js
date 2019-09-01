@@ -20,6 +20,7 @@ export default class GalleryDetail extends PureComponent {
       description: imageDescription,
       location: imageLocation,
       published_at: imagePublishedAt,
+      hash,
     } = image;
 
     const imageUrl = `/gallery/${name}/${imageName}`;
@@ -29,7 +30,7 @@ export default class GalleryDetail extends PureComponent {
         render={({ history }) => (
           <StyledGalleryDetail onClick={() => history.push(imageUrl)}>
             <figure>
-              <Image src={imageName} alt={imageName} />
+              <Image src={hash} alt={imageName} />
               <figcaption>
                 <NavLink to={imageUrl}>
                   <h3>{`${imageDescription} (${imageLocation} ${imagePublishedAt})`}</h3>
