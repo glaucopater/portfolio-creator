@@ -87,7 +87,7 @@ class ImageDetails extends React.PureComponent {
         const galleryName = this.props.match.params.galleryname;
         return (
           <Fragment>
-            <Hero galleryName={galleryName} imageName={name} />
+            <Hero galleryName={galleryName} imageName={name} isSmall={true} />
             <ImageDetailsWrapper>
               <Prev
                 gallery={galleryName}

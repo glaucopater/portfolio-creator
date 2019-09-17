@@ -3,10 +3,10 @@ import { StyledHero, StyledHeroHeader } from './styled';
 import { NavLink } from 'react-router-dom';
 import strings from '../../constants/strings';
 
-const Hero = ({ galleryName, imageName }) => {
+const Hero = ({ galleryName, imageName, isSmall }) => {
   return (
-    <StyledHero>
-      <StyledHeroHeader>
+    <StyledHero isSmall={isSmall}>
+      <StyledHeroHeader isSmall={isSmall}>
         <h1>{strings.portfolioOf}</h1>
       </StyledHeroHeader>
       <article>
