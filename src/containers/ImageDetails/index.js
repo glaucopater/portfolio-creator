@@ -73,10 +73,6 @@ class ImageDetails extends React.PureComponent {
       const imageDetailsData = this.props.data.data.filter(
         d => d.name.lastIndexOf(this.props.match.params.galleryname) !== -1,
       );
-      console.log(
-        'TCL: ImageDetails -> render -> imageDetailsData',
-        imageDetailsData,
-      );
 
       const selectedImageDetails = imageDetailsData[0].images.filter(
         d => d.name === this.props.match.params.name,
@@ -91,7 +87,7 @@ class ImageDetails extends React.PureComponent {
         const galleryName = this.props.match.params.galleryname;
         return (
           <Fragment>
-            <Hero galleryName={galleryName} imageName={name} />
+            <Hero galleryName={galleryName} imageName={name} isSmall={true} />
             <ImageDetailsWrapper>
               <Prev
                 gallery={galleryName}

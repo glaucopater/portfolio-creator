@@ -8,7 +8,7 @@ export default class GalleryDetail extends PureComponent {
   static propTypes = {
     image: PropTypes.object,
     name: PropTypes.string,
-    description: PropTypes.string,
+    description: PropTypes.string.isRequired,
     location: PropTypes.string,
     published_at: PropTypes.string,
   };

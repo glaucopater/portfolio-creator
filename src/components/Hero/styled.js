@@ -19,16 +19,21 @@ export const StyledHeroHeader = styled.div`
     overflow: hidden;
     text-overflow: ellipsis;
     width: 100%;
+    ${({ isSmall }) => isSmall && `font-size: 2rem;`}
   }
 `;
 
 export const StyledHero = styled.section`
-  background: url(${backgroundImage});
   background-size: cover;
+  ${({ isSmall }) => !isSmall && `background: url(${backgroundImage});`}
 
   @media ${device.laptop} {
+  ${({ isSmall }) =>
+    !isSmall &&
+    `
     background: url(${backgroundImage}) center 35%;
     background-size: cover;
+    `}    
   }
 
   @media (max-width: ${size.mobileL}) {

@@ -53,6 +53,7 @@ class GalleryDetails extends React.PureComponent {
                     <GalleryDetail
                       key={k}
                       image={im}
+                      description=""
                       name={q.name.toLowerCase()}
                     />
                   ));
