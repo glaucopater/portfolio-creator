@@ -25,14 +25,15 @@ export const StyledHeroHeader = styled.div`
 
 export const StyledHero = styled.section`
   background-size: cover;
-  ${({ isSmall }) => !isSmall && `background: url(${backgroundImage});`}
+  background: url(${backgroundImage}) 0 35%;
+  ${({ isSmall }) => (isSmall ? `padding: 1rem 1rem;` : `padding: 2rem 2rem;`)}
 
   @media ${device.laptop} {
   ${({ isSmall }) =>
     !isSmall &&
     `
-    background: url(${backgroundImage}) center 35%;
-    background-size: cover;
+      background: url(${backgroundImage}) center 35%;
+      background-size: cover;
     `}    
   }
 
@@ -44,10 +45,13 @@ export const StyledHero = styled.section`
     padding: 0.5rem;
   }
 
-  padding: 2rem 2rem;
   display: flex;
   align-items: flex-start;
   flex-direction: column;
+  ${({ isSmall }) =>
+    isSmall
+      ? `flex-direction: row; justify-content: space-between; `
+      : `flex-direction: column;`}
 
   > * {
     color: white;
