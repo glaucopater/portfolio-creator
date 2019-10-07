@@ -33,7 +33,7 @@ export default class GalleryDetail extends PureComponent {
               <Image src={hash} alt={imageName} />
               <figcaption>
                 <NavLink to={imageUrl}>
-                  <h3>{`${imageDescription} (${imageLocation} ${imagePublishedAt})`}</h3>
+                  <h3>{`${imageDescription} (${imageLocation}${imagePublishedAt})`}</h3>
                 </NavLink>
               </figcaption>
             </figure>
