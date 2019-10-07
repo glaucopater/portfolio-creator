@@ -52,6 +52,16 @@ const compressImage = async item => {
   }
 };
 
+const cleanDirectory = path => {
+  console.log('TCL: cleanDirectory', path);
+
+  fs.readdirSync(path).forEach(file => {
+    const curPath = path + '/' + file;
+    fs.unlinkSync(curPath, err => {
+      if (err) throw err;
+    });
+  });
+};
 //create image index file
 
 const createImagesIndex = () => {
@@ -94,4 +104,17 @@ if (sourceFolder) {
   console.log('export const data = ' + JSON.stringify(tree));
 } else if (fs.existsSync(`${outputPath}`)) {
   createImagesIndex();
+
+  //cleanup destination folder
+  if (fs.existsSync('../src/mockup/data.js')) {
+    fs.unlinkSync('../src/mockup/data.js');
+  }
+  if (fs.existsSync('../src/mockup/output/')) {
+    cleanDirectory('../src/mockup/output/');
+    fs.rmdirSync('../src/mockup/output/');
+  }
+
+  //copy new files
+  fs.renameSync(`./data.js`, '../src/mockup/data.js');
+  fs.renameSync(`${outputPath}`, '../src/mockup/output/');
 }

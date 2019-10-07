@@ -16,8 +16,6 @@
 
 npm run setup
 
-then copy the output folder and data.js from /scripts/ into src/mockup/ folder
-
 - 3. Start the app
 
 npm run start
