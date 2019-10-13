@@ -1,3 +1,5 @@
+import { FILE_EXTENSION } from '../constants';
+
 export const getRandomInt = (min, max) => {
   min = Math.ceil(min);
   max = Math.floor(max);
@@ -13,6 +15,23 @@ export const getQueryStringVariable = (queryString, variable) => {
       return decodeURIComponent(pair[1]);
     }
   }
+};
+
+const transformItem = item => {
+  return {
+    name: item.name,
+    published_at: new Date().getFullYear(),
+    images: item.children.map(im => {
+      const item_name = im.name.replace(FILE_EXTENSION, '');
+      return {
+        name: item_name,
+        hash: im.hash,
+        description: item_name,
+        location: '',
+        published_at: new Date().getFullYear(),
+      };
+    }),
+  };
 };
 
 export const transformGalleries = data => {
@@ -32,42 +51,15 @@ export const transformGalleries = data => {
 
 export const transformGalleryDetails = data => {
   const { children } = data;
-  const extension = '.jpg';
-  const galleryDetails = Object.values(children).map(item => {
-    return {
-      name: item.name,
-      published_at: new Date().getFullYear(),
-      images: item.children.map(im => {
-        return {
-          name: im.name.replace(extension, ''),
-          hash: im.hash,
-          description: im.name.replace(extension, ''),
-          location: '',
-          published_at: new Date().getFullYear(),
-        };
-      }),
-    };
-  });
+  const galleryDetails = Object.values(children).map(item =>
+    transformItem(item),
+  );
 
   return { galleryDetails: galleryDetails };
 };
 
 export const transformImageDetails = data => {
   const { children } = data;
-  const imageDetails = Object.values(children).map(item => {
-    return {
-      name: item.name,
-      published_at: new Date().getFullYear(),
-      images: item.children.map(im => {
-        return {
-          name: im.name.replace(im.extension, ''),
-          hash: im.hash,
-          exif: '',
-          published_at: new Date().getFullYear(),
-        };
-      }),
-    };
-  });
-
+  const imageDetails = Object.values(children).map(item => transformItem(item));
   return { imageDetails: imageDetails };
 };

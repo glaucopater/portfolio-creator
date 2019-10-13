@@ -1,5 +1,5 @@
 export default {
-  portfolioOf: "Glauco Pater's Photography",
+  portfolioOf: 'Glimpse',
   home: 'Home',
   author: 'Glauco Pater',
   galleries: 'Galleries',

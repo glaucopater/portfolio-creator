@@ -1,13 +1,10 @@
 import styled from 'styled-components';
 
 export const StyledGalleryDetail = styled.li`
-  border: 1px solid #e2e2e250;
-  border-radius: 0.5rem;
   background: #000;
 
   > figure {
     overflow: hidden;
-    border-radius: 0.5rem;
     position: relative;
     opacity: 0.8;
     transition: 0.5s ease-in;
@@ -33,8 +30,6 @@ export const StyledGalleryDetail = styled.li`
     bottom: 0;
     background-color: rgba(0, 0, 0, 0.7);
     width: 100%;
-    border-bottom-left-radius: 0.5rem;
-    border-bottom-right-radius: 0.5rem;
   }
 
   > figure > figcaption > a > h3 {
