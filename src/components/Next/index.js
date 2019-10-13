@@ -1,19 +1,20 @@
 import React from 'react';
 import strings from '../../constants/strings';
 import { NavLink } from 'react-router-dom';
+import { StyledNext } from './styled';
 
 const Next = ({ gallery, currentImage, imagesCount }) => {
   const currentPos = +currentImage.replace(gallery, '');
 
   if (currentPos === imagesCount) {
-    return (
-      <div style={{ padding: '0.5rem', color: '#FFF' }}>{strings.next}</div>
-    );
+    return <StyledNext>{strings.next}</StyledNext>;
   }
   return (
-    <NavLink to={`/gallery/${gallery}/${gallery}${currentPos + 1}`}>
-      {strings.next}
-    </NavLink>
+    <StyledNext>
+      <NavLink to={`/gallery/${gallery}/${gallery}${currentPos + 1}`}>
+        {strings.next}
+      </NavLink>
+    </StyledNext>
   );
 };
 

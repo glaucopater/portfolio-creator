@@ -10,7 +10,11 @@ import Next from '../../components/Next';
 import { fetchImageDetails } from './actions';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
-import { StyledImageDetails, ImageDetailsWrapper } from './styled';
+import {
+  StyledImageDetails,
+  StyledImageDetailsWrapper,
+  StyledHeading,
+} from './styled';
 
 class ImageDetails extends React.PureComponent {
   static propTypes = {
@@ -88,7 +92,7 @@ class ImageDetails extends React.PureComponent {
         return (
           <Fragment>
             <Hero galleryName={galleryName} imageName={name} isSmall={true} />
-            <ImageDetailsWrapper>
+            <StyledImageDetailsWrapper>
               <Prev
                 gallery={galleryName}
                 currentImage={name}
@@ -96,14 +100,14 @@ class ImageDetails extends React.PureComponent {
               />
               <StyledImageDetails>
                 <Image src={hash} alt={name} />
-                <h3>{description}</h3>
+                <StyledHeading>{description}</StyledHeading>
               </StyledImageDetails>
               <Next
                 gallery={galleryName}
                 currentImage={name}
                 imagesCount={imageDetailsData.length}
               />
-            </ImageDetailsWrapper>
+            </StyledImageDetailsWrapper>
             <Footer />
           </Fragment>
         );

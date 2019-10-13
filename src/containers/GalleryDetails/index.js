@@ -8,7 +8,7 @@ import Loading from '../../components/Loading';
 import { fetchGalleryDetails } from './actions';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
-import { StyledGalleryDetails, StyledGalleryDetailsGrid } from './styled';
+import { StyledGalleries, StyledGalleriesGrid } from '../common/styled';
 
 class GalleryDetails extends React.PureComponent {
   static propTypes = {
@@ -45,8 +45,8 @@ class GalleryDetails extends React.PureComponent {
       return (
         <Fragment>
           <Hero galleryName={galleryName} />
-          <StyledGalleryDetails>
-            <StyledGalleryDetailsGrid>
+          <StyledGalleries>
+            <StyledGalleriesGrid>
               {galleryDetailsData.map((q, index) => {
                 if (q.name.toLowerCase() === galleryName) {
                   return Object.values(q.images).map((im, k) => (
@@ -59,8 +59,8 @@ class GalleryDetails extends React.PureComponent {
                   ));
                 } else return null;
               })}
-            </StyledGalleryDetailsGrid>
-          </StyledGalleryDetails>
+            </StyledGalleriesGrid>
+          </StyledGalleries>
           <Footer />
         </Fragment>
       );
