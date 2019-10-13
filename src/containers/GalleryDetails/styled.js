@@ -13,6 +13,6 @@ export const StyledGalleryDetailsGrid = styled.ul`
     grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
   }
   grid-gap: 1rem;
-  padding: 1rem;
   list-style-type: none;
+  padding-inline-start: 0;
 `;

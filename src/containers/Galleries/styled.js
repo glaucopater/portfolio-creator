@@ -8,11 +8,11 @@ export const StyledGalleries = styled.div`
 
 export const StyledGalleriesGrid = styled.ul`
   display: grid;
+  padding-inline-start: 0;
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
   @media ${device.mobileL} {
     grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
   }
   grid-gap: 1rem;
-  padding: 1rem;
   list-style-type: none;
 `;
