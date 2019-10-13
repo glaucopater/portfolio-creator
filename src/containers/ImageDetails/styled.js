@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import { DEFAULT_PADDING } from '../../constants/';
 
-export const ImageDetailsWrapper = styled.div`
+export const StyledImageDetailsWrapper = styled.div`
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -17,11 +17,9 @@ export const StyledImageDetails = styled.div`
   justify-content: center;
   flex-direction: column;
   color: #fff;
-  > h3 {
-    margin-top: 1rem;
-    text-transform: capitalize;
-  }
-  > div {
-    padding: ${DEFAULT_PADDING};
-  }
+`;
+
+export const StyledHeading = styled.h3`
+  margin-top: 1rem;
+  text-transform: capitalize;
 `;

@@ -8,7 +8,7 @@ import Loading from '../../components/Loading';
 import { fetchGalleries } from './actions';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
-import { StyledGalleries, StyledGalleriesGrid } from './styled';
+import { StyledGalleries, StyledGalleriesGrid } from '../common/styled';
 
 class Galleries extends React.PureComponent {
   static propTypes = {
