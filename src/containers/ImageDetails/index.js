@@ -5,16 +5,11 @@ import Hero from '../../components/Hero';
 import Footer from '../../components/Footer/';
 import Loading from '../../components/Loading';
 import Image from '../../components/Image';
-import Prev from '../../components/Prev';
-import Next from '../../components/Next';
 import { fetchImageDetails } from './actions';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
-import {
-  StyledImageDetails,
-  StyledImageDetailsWrapper,
-  StyledHeading,
-} from './styled';
+import { StyledImageDetailsWrapper } from './styled';
+import Carousel from 'nuka-carousel';
 
 class ImageDetails extends React.PureComponent {
   static propTypes = {
@@ -87,26 +82,21 @@ class ImageDetails extends React.PureComponent {
       }
 
       if (selectedImageDetails) {
-        const { name, description, hash } = selectedImageDetails[0];
+        const { name } = selectedImageDetails[0];
         const galleryName = this.props.match.params.galleryname;
         return (
           <Fragment>
             <Hero galleryName={galleryName} imageName={name} isSmall={true} />
             <StyledImageDetailsWrapper>
-              <Prev
-                gallery={galleryName}
-                currentImage={name}
-                imagesCount={imageDetails.length}
-              />
-              <StyledImageDetails>
-                <Image src={hash} alt={name} />
-                <StyledHeading>{description}</StyledHeading>
-              </StyledImageDetails>
-              <Next
-                gallery={galleryName}
-                currentImage={name}
-                imagesCount={imageDetailsData.length}
-              />
+              <Carousel
+                wrapAround
+                enableKeyboardControls
+                renderBottomCenterControls={null}
+              >
+                {imageDetailsData[0].images.map((im, index) => (
+                  <Image key={index.toString()} src={im.hash} alt={im.name} />
+                ))}
+              </Carousel>
             </StyledImageDetailsWrapper>
             <Footer />
           </Fragment>

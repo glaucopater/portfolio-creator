@@ -7,6 +7,7 @@ export const StyledImageDetailsWrapper = styled.div`
   align-items: center;
   align-content: center;
   justify-content: center;
+  margin: 1rem 0;
 `;
 
 export const StyledImageDetails = styled.div`
