@@ -9,17 +9,21 @@ export const StyledHeroHeader = styled.div`
   align-content: center;
   justify-content: center;
 
-  > h1 {
+  > h1 > a {
     @media (max-width: ${size.mobileL}) {
       font-size: 2rem;
     }
+    background: #00000050;
     font-size: 4rem;
-    text-shadow: #333 3px 3px;
-    opacity: 0.7;
     overflow: hidden;
     text-overflow: ellipsis;
     width: 100%;
     ${({ isSmall }) => isSmall && `font-size: 2rem;`}
+
+    :hover {
+      background: #000;
+      opacity: 0.7;
+    }
   }
 `;
 
@@ -46,24 +50,21 @@ export const StyledHero = styled.section`
   }
 
   display: flex;
-  align-items: flex-start;
-  flex-direction: column;
-  ${({ isSmall }) =>
-    isSmall
-      ? `flex-direction: row; justify-content: space-between; `
-      : `flex-direction: column;`}
+  flex-direction: row; 
+  align-items: center; 
+  justify-content: space-between;
 
   > * {
     color: white;
   }
 
-  > article {
+  > div {
     display: flex;
     flex-direction: row;
     align-items: baseline;
   }
 
-  > article > p {
+  > div > p {
     @media (max-width: ${size.mobileL}) {
       font-size: 1rem;
     }
@@ -73,17 +74,18 @@ export const StyledHero = styled.section`
     padding: 1rem;
   }
 
-  > article > a {
+  > div > a {
+
     @media (max-width: ${size.mobileL}) {
       font-size: 1rem;
     }
+    background-color: #00000050;
     font-size: 1.5rem;
-    margin-top: 0.75rem;
     margin-right: 1rem;
-    text-transform: capitalize;
-  }
 
-  a {
-    background-color: blue;
+    :hover {
+      background-color: #000000;
+    }
   }
+  
 `;
