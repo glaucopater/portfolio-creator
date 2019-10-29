@@ -4,10 +4,12 @@ export const StyledGalleryDetail = styled.li`
   background: #000;
 
   > figure {
+    height: 230px;
     overflow: hidden;
     position: relative;
     opacity: 0.8;
     transition: 0.5s ease-in;
+    background: white;
   }
 
   > figure:hover {

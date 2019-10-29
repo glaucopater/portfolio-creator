@@ -13,4 +13,5 @@ export default {
   explore: 'Portfolio of Glauco Pater',
   empty: '',
   rights: '© All rights reserved',
+  backTo: 'Back to:',
 };

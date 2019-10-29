@@ -5,11 +5,12 @@ export const StyledGallery = styled.li`
   background: #000;
 
   > figure {
-    max-height: 220px;
+    height: 230px;
     overflow: hidden;
     position: relative;
     opacity: 0.8;
     transition: 0.5s ease-in;
+    background: #00000050;
   }
 
   > figure:hover {
