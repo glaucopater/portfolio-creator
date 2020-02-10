@@ -1,10 +1,12 @@
 import styled from 'styled-components';
 
 export const StyledFooter = styled.section`
-  background: #000;
+  background: #121212;
   color: #FFF
   padding: 2rem;
   display: flex;
   align-items: flex-start;
   flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
 `;

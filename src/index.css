@@ -23,7 +23,7 @@
    margin: 0;
    -webkit-font-smoothing: antialiased;
    -moz-osx-font-smoothing: grayscale;
-   background: #000;
+   background: #121212;
  }
 
  code {
@@ -45,6 +45,7 @@
  a {
    text-decoration: none;
    color: white;
+   opacity: .9;
    text-align: center;
    display: inline-block;
    transition: all .3s;
@@ -52,5 +53,5 @@
  }
 
  a:hover {
-   opacity: .6;
+   opacity: .95;
  }
