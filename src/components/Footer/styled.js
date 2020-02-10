@@ -7,4 +7,6 @@ export const StyledFooter = styled.section`
   display: flex;
   align-items: flex-start;
   flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
 `;

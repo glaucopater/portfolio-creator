@@ -4,6 +4,7 @@ import { HashRouter as Router, Route } from 'react-router-dom';
 import { connect } from 'react-redux';
 import GalleryDetails from './containers/GalleryDetails';
 import ImageDetails from './containers/ImageDetails';
+import Disclaimer from './containers/Pages/Disclaimer';
 
 const App = () => {
   return (
@@ -24,6 +25,12 @@ const App = () => {
             path="/gallery/:galleryname/:name"
             exact
             render={routeProps => <ImageDetails {...routeProps} />}
+          />
+
+          <Route
+            path="/disclaimer"
+            exact
+            render={routeProps => <Disclaimer {...routeProps} />}
           />
         </div>
       </Fragment>
