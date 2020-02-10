@@ -16,4 +16,5 @@ export default {
   rights: '© All rights reserved',
   backTo: 'Back to:',
   disclaimer: 'Legal disclaimer',
+  loading: 'Loading ...',
 };

@@ -10,4 +10,5 @@ const Logo = () => {
     </StyledLogo>
   );
 };
+
 export default Logo;
