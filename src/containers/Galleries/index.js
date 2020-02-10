@@ -1,4 +1,4 @@
-import React, { Fragment } from 'react';
+import React, { Fragment, useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import Gallery from '../../components/Gallery';
 import Hero from '../../components/Hero';
@@ -10,52 +10,45 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { StyledGalleries, StyledGalleriesGrid } from '../common/styled';
 
-class Galleries extends React.PureComponent {
-  static propTypes = {
-    Galleries: PropTypes.object,
-    fetchGalleries: PropTypes.func,
-  };
-  constructor(props) {
-    super(props);
-    this.state = { Galleries: [] };
-  }
+const Galleries = props => {
+  const { fetchGalleries } = props;
+  const [galleriesData, setGalleriesData] = useState([]);
 
-  async update() {
-    this.props.fetchGalleries();
-  }
+  useEffect(() => {
+    const fetchData = async () => {
+      const result = await fetchGalleries();
+      setGalleriesData(result.data.galleries);
+    };
+    fetchData();
+  }, [fetchGalleries]);
 
-  componentDidMount() {
-    this.update();
-  }
-
-  render() {
-    const galleries = this.props.data;
-
-    if (!galleries || !galleries.data) {
-      return <Loading />;
-    } else {
-      const galleriesData = galleries.data ? galleries.data : [];
-
-      if (galleriesData.length === 0) {
-        return <EmptyResults />;
-      }
-
-      return (
-        <Fragment>
-          <Hero />
-          <StyledGalleries>
-            <StyledGalleriesGrid>
-              {galleriesData.map((q, index) => (
-                <Gallery key={index} {...q} />
-              ))}
-            </StyledGalleriesGrid>
-          </StyledGalleries>
-          <Footer />
-        </Fragment>
-      );
+  if (!galleriesData) {
+    return <Loading />;
+  } else {
+    if (galleriesData.length === 0) {
+      return <EmptyResults />;
     }
+
+    return (
+      <Fragment>
+        <Hero />
+        <StyledGalleries>
+          <StyledGalleriesGrid>
+            {galleriesData.map((q, index) => (
+              <Gallery key={index} {...q} />
+            ))}
+          </StyledGalleriesGrid>
+        </StyledGalleries>
+        <Footer />
+      </Fragment>
+    );
   }
-}
+};
+
+Galleries.propTypes = {
+  Galleries: PropTypes.object,
+  fetchGalleries: PropTypes.func,
+};
 
 export default connect(
   ({ fetchGalleries: data }) => ({
