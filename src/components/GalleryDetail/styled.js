@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 export const StyledGalleryDetail = styled.li`
-  background: #000;
+  background: #121212;
 
   > figure {
     height: 230px;
@@ -9,13 +9,12 @@ export const StyledGalleryDetail = styled.li`
     position: relative;
     opacity: 0.8;
     transition: 0.5s ease-in;
-    background: white;
   }
 
   > figure:hover {
     opacity: 1;
     transition: 0.5s ease-out;
-    background: #000;
+    background: #121212;
     cursor: pointer;
   }
 

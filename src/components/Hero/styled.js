@@ -13,17 +13,11 @@ export const StyledHeroHeader = styled.div`
     @media (max-width: ${size.mobileL}) {
       font-size: 2rem;
     }
-    background: #00000050;
     font-size: 4rem;
     overflow: hidden;
     text-overflow: ellipsis;
     width: 100%;
     ${({ isSmall }) => isSmall && `font-size: 2rem;`}
-
-    :hover {
-      background: #000;
-      opacity: 0.7;
-    }
   }
 `;
 
@@ -79,13 +73,8 @@ export const StyledHero = styled.section`
     @media (max-width: ${size.mobileL}) {
       font-size: 1rem;
     }
-    background-color: #00000050;
     font-size: 1.5rem;
     margin-right: 1rem;
-
-    :hover {
-      background-color: #000000;
-    }
   }
   
 `;
