@@ -46,9 +46,11 @@ class ImageDetails extends React.PureComponent {
       const imageDetailsData = this.props.data.data.filter(
         d => d.name.lastIndexOf(gallery) !== -1,
       );
+
       const selectedImageDetails = imageDetailsData[0].images.filter(
         d => d.name === this.props.match.params.name,
       );
+
       const { name: currentImage } = selectedImageDetails[0];
       const currentPos = +currentImage.replace(gallery, '');
       if (where === 1 && currentPos < imageDetailsData[0].images.length - 1) {
@@ -81,7 +83,7 @@ class ImageDetails extends React.PureComponent {
         return <EmptyResults />;
       }
 
-      if (selectedImageDetails) {
+      if (selectedImageDetails && selectedImageDetails[0]) {
         const { name } = selectedImageDetails[0];
         const galleryName = this.props.match.params.galleryname;
         return (
@@ -91,6 +93,7 @@ class ImageDetails extends React.PureComponent {
               <Carousel
                 wrapAround
                 enableKeyboardControls
+                heightMode={'first'}
                 renderBottomCenterControls={null}
               >
                 {imageDetailsData[0].images.map((im, index) => (

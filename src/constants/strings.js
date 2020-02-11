@@ -10,7 +10,6 @@ export default {
   open: 'Open',
   prev: 'Prev',
   next: 'Next',
-  browse: 'Portfolio of Glauco Pater',
   explore: 'Portfolio of Glauco Pater',
   empty: '',
   rights: '© All rights reserved',
