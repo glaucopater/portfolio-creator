@@ -17,6 +17,8 @@ const Image = ({ src, alt }) => {
     <StyledImg
       src={src}
       alt={alt}
+      onContextMenu={e => e.preventDefault()}
+      onMouseDown={e => e.preventDefault()}
       loader={<Loader type="Puff" color="#00BFFF" height={100} width={100} />}
     />
   );

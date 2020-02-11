@@ -1,4 +1,4 @@
-import React, { Fragment } from 'react';
+import React, { useState, useEffect, Fragment } from 'react';
 import PropTypes from 'prop-types';
 import GalleryDetail from '../../components/GalleryDetail/';
 import Hero from '../../components/Hero/';
@@ -10,63 +10,61 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { StyledGalleries, StyledGalleriesGrid } from '../common/styled';
 
-class GalleryDetails extends React.PureComponent {
-  static propTypes = {
-    galleryDetails: PropTypes.object,
-    fetchGalleryDetails: PropTypes.func,
-  };
+const GalleryDetails = props => {
+  const [data, setData] = useState([]);
+  const { match, fetchGalleryDetails } = props;
+  const galleryName = match.params.name;
 
-  async update(match) {
-    this.props.fetchGalleryDetails(match.params.name);
-  }
-
-  componentDidMount() {
-    if (this.props.match) {
-      const { match } = this.props;
-      this.update(match);
-    }
-  }
-
-  render() {
-    const galleryDetails = this.props.data;
-    const galleryName = this.props.match.params.name;
-
-    if (!galleryDetails || !galleryDetails.data) {
-      return <Loading />;
-    } else {
-      const galleryDetailsData = galleryDetails.data.filter(
-        g => g.name.toLowerCase() === galleryName,
-      );
-
-      if (galleryDetailsData.length === 0) {
-        return <EmptyResults />;
+  useEffect(() => {
+    const fetchData = async () => {
+      if (match) {
+        const result = await fetchGalleryDetails(galleryName);
+        setData(result.data.galleryDetails);
       }
+    };
+    fetchData();
+  }, [fetchGalleryDetails, match, galleryName]);
 
-      return (
-        <Fragment>
-          <Hero galleryName={galleryName} />
-          <StyledGalleries>
-            <StyledGalleriesGrid>
-              {galleryDetailsData.map((q, index) => {
-                if (q.name.toLowerCase() === galleryName) {
-                  return Object.values(q.images).map((im, k) => (
-                    <GalleryDetail
-                      key={k}
-                      image={im}
-                      description=""
-                      name={q.name.toLowerCase()}
-                    />
-                  ));
-                } else return null;
-              })}
-            </StyledGalleriesGrid>
-          </StyledGalleries>
-          <Footer />
-        </Fragment>
-      );
-    }
+  if (!data) {
+    return <Loading />;
   }
-}
+
+  const galleryDetailsData = data.filter(
+    g => g.name.toLowerCase() === galleryName,
+  );
+
+  if (galleryDetailsData.length === 0) {
+    return <EmptyResults />;
+  }
+
+  return (
+    <Fragment>
+      <Hero galleryName={galleryName} />
+      <StyledGalleries>
+        <StyledGalleriesGrid>
+          {galleryDetailsData.map((q, index) => {
+            if (q.name.toLowerCase() === galleryName) {
+              return Object.values(q.images).map((im, k) => (
+                <GalleryDetail
+                  key={k}
+                  image={im}
+                  description=""
+                  name={q.name.toLowerCase()}
+                />
+              ));
+            } else return null;
+          })}
+        </StyledGalleriesGrid>
+      </StyledGalleries>
+      <Footer />
+    </Fragment>
+  );
+};
+
+GalleryDetails.propTypes = {
+  galleryDetails: PropTypes.object,
+  fetchGalleryDetails: PropTypes.func,
+};
 
 export default connect(
   ({ fetchGalleryDetails: data }) => ({
