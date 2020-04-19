@@ -5,6 +5,8 @@ import { connect } from 'react-redux';
 import GalleryDetails from './containers/GalleryDetails';
 import ImageDetails from './containers/ImageDetails';
 import Disclaimer from './containers/Pages/Disclaimer';
+import Masonic from 'masonic';
+import MasonicGallery from './containers/MasonicGallery';
 
 const App = () => {
   return (
@@ -26,7 +28,11 @@ const App = () => {
             exact
             render={routeProps => <ImageDetails {...routeProps} />}
           />
-
+          <Route
+            path="/masonic"
+            exact
+            render={routeProps => <MasonicGallery {...routeProps} />}
+          />
           <Route
             path="/disclaimer"
             exact

@@ -11,6 +11,7 @@
     "directory-tree": "^2.2.4",
     "fibers": "^4.0.2",
     "http-proxy-middleware": "^0.20.0",
+    "masonic": "^2.1.7",
     "moment": "^2.24.0",
     "mutationobserver-shim": "^0.3.3",
     "node-sass": "^4.13.1",
