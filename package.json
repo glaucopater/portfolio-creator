@@ -13,7 +13,7 @@
     "http-proxy-middleware": "^0.20.0",
     "moment": "^2.24.0",
     "mutationobserver-shim": "^0.3.3",
-    "node-sass": "^4.13.1",
+    "node-sass": "^7.0.0",
     "nuka-carousel": "^4.6.2",
     "object-hash": "^2.0.2",
     "react": "^16.12.0",
